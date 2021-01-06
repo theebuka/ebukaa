@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from './pages/home.js';
 import About from './pages/about.js';
@@ -6,12 +6,12 @@ import Projects from './pages/projects.js';
 import Contact from './pages/contact.js';
 import Misc from './pages/misc.js';
 import Error from './pages/error.js';
+import LoadingScreen from './pages/loading.js';
 import Playlist from './pages/playlist.js';
+import Readlist from './pages/readlist.js';
 import Navigation from './components/desktop-nav.js';
 import Topbar from './components/topbar.js';
 import Social from './components/social.js';
-/* import { VFXProvider } from 'react-vfx';
-import { VFXImg } from 'react-vfx'; */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +22,15 @@ import './Home.css';
 library.add(fab,fas);
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setLoading(true), 6000)
+  }, [])
+  
   return (
+    // <>
+    {loading === false ? (
     <Router>
       <Topbar />
       <Navigation />
@@ -33,7 +41,7 @@ function App() {
       </div>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home animDuration={7}/>
         </Route>
         <Route path="/about">
           <About />
@@ -48,6 +56,8 @@ function App() {
           <div>
             <Route path={`${url}/`} component={Misc} exact />
             <Route path={`${url}/playlist`} component={Playlist} />
+            <Route path={`${url}/readlist`} component={Readlist} />
+            <Route><Error /></Route>
           </div>
         )} />
         <Route>
@@ -56,6 +66,8 @@ function App() {
       </Switch>
       <Social />
     </Router>
+    ):(<LoadingScreen/>)}
+    // </>
   );
 }
 

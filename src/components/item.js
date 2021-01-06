@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class Item extends Component {
+class pItem extends Component {
     render() {
         return (
             <div className="item">
@@ -19,4 +19,22 @@ class Item extends Component {
     }
 };
 
-export default Item;
+class rItem extends Component {
+    render() {
+        return (
+            <div className="item">
+                <div>
+                    <span>{this.props.title}</span>
+                    <span>{this.props.author}</span>
+                </div>
+                <div>
+                    <span>{this.props.year}</span>
+                    <span>{this.props.genre}</span>
+                    <span>{this.props.rating} <FontAwesomeIcon icon={["fas","star"]} /></span>
+                </div>
+            </div>
+        )
+    }
+};
+
+export {pItem, rItem};

@@ -7,7 +7,7 @@ class MiscSectionHeader extends Component {
         return(
             <div className="misc-header">
                 <h1>{this.props.headerText}</h1>
-                <Link to="/misc"><FontAwesomeIcon icon="arrow-left"/>Back</Link>
+                <Link to="/misc"><FontAwesomeIcon icon="arrow-left"/> Back</Link>
             </div>
         )
     }

@@ -15,7 +15,7 @@ class About extends Component {
                 <div className="skill">
                     <h6>Skillset</h6>
                     <div>
-                        <Skillcard title="Build" body="Code functional, interactive and responsive webpages with a slew of modern tools, libraries and frameworks made for the web." tools="Html, Css, Javascript, Jquery, React, Bootstrap, WordPress" />
+                        <Skillcard title="Develop" body="Build functional, interactive and responsive webpages with a slew of modern tools, libraries and frameworks made for the web." tools="Html, Css, Javascript, Jquery, React, Bootstrap, WordPress" />
                         <Skillcard title="Design" body="Design visually appealing and usable interfaces with proficiency in various design software with great attention to detail." tools="Adobe XD, Figma, InVision Studio, Adobe Photoshop, Adobe Illustrator"/>
                         <Skillcard title="Write" body="Create and proofread engaging content for use in articles, books, websites, products." />
                     </div>

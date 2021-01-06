@@ -6,15 +6,17 @@ class DevCard extends Component {
         return (
             <div className="dev-card">
                 <div>
-                    <h5>{this.props.title}</h5>
+                    <div>
+                        <h4>{this.props.title}</h4>
+                        <span>{this.props.stack}</span>
+                    </div>
+                    <ul>
+                        <SocialItem path={this.props.linkSite} iconName={['far','globe']} />
+                        <SocialItem path={this.props.linkGithub} iconName={['fab','github']} />
+                    </ul>
+                </div>
+                <div>
                     <p>{this.props.synopsis}</p>
-                </div>
-                <div>
-                    <span>{this.props.stack}</span>
-                </div>
-                <div>
-                    <SocialItem path={this.props.linkSite} icon="browser" />
-                    <SocialItem path={this.props.linkGithub} icon={['fab','github']} />
                 </div>
             </div>
         )

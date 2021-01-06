@@ -5,8 +5,8 @@ class Logo extends Component {
     render() {
         return (
             <div className="logo">
-                <span className=""></span>
-                <Link to="/" className="">Ebuka Nwaju</Link>
+                <span className="horizontal-bar"></span>
+                <Link to="/" className="">Ebuka<br/>Nwaju</Link>
             </div>
         )
     }

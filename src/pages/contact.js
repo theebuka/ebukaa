@@ -7,25 +7,19 @@ class Contact extends Component {
             <section className="Contact">
                 <div>
                     <p>
-                        I'd love to hear from you. Send me a message or inquiry or whatever (just not dad jokes) using the contact form or connect with me via my socials.
+                        Hey! I'd love to hear from you. Send me a message using the contact form or connect with me via my socials.
                     </p>
-                    <div>
-                        {/* <div> */}
-                            <SocialItem path="https://facebook.com/ebuka.nwaju/" iconName={['fab','facebook-f']} /> {/* facebook */}
-                            <SocialItem path="https://twitter.com/savage_anatii" iconName={['fab','twitter']} /> {/* twitter */}
-                            <SocialItem path="https://instagram.com/rin.ze/" iconName={['fab','instagram']} /> {/* instagram */}
-                        {/* </div>
-                        <div> */}
-                            <SocialItem path="https://github.com/theebuka" iconName={['fab','github']} /> {/* github */}
-                            <SocialItem path="https://dribbble.com/Ebukaa" iconName={['fab','dribbble']} /> {/* dribbble */}
-                            <SocialItem path="https://medium.com/@ebuka.nwaju" iconName={['fab','medium']} /> {/* medium */}
-                        {/* </div>
-                        <div> */}
-                            <SocialItem path="https://unsplash.com/@anatii" iconName={['fab','unsplash']} /> {/* unsplash */}
-                            <SocialItem path="mailto:ebuka.nwaju@yahoo.com" iconName={['fas','envelope']} /> {/* email */}
-                            <SocialItem path="https://linkedin.com/" iconName={['fab','linkedin-in']} /> {/* linkedin */}
-                        {/* </div> */}
-                    </div>
+                    <ul>
+                        <SocialItem path="https://facebook.com/ebuka.nwaju/" iconName={['fab','facebook-f']} /> {/* facebook */}
+                        <SocialItem path="https://twitter.com/savage_anatii" iconName={['fab','twitter']} /> {/* twitter */}
+                        <SocialItem path="https://instagram.com/rin.ze/" iconName={['fab','instagram']} /> {/* instagram */}
+                        <SocialItem path="https://github.com/theebuka" iconName={['fab','github-alt']} /> {/* github */}
+                        <SocialItem path="https://dribbble.com/Ebukaa" iconName={['fab','dribbble']} /> {/* dribbble */}
+                        <SocialItem path="https://medium.com/@ebuka.nwaju" iconName={['fab','medium-m']} /> {/* medium */}
+                        <SocialItem path="https://unsplash.com/@anatii" iconName={['fab','unsplash']} /> {/* unsplash */}
+                        <SocialItem path="mailto:ebuka.nwaju@yahoo.com" iconName={['fas','envelope']} /> {/* email */}
+                        <SocialItem path="https://linkedin.com/" iconName={['fab','linkedin-in']} /> {/* linkedin */}
+                    </ul>
                 </div>
                 <div>
                     <form action="https://www.formingo.co/submit/ebuka.nwaju@yahoo.com" method="POST">

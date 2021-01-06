@@ -16,7 +16,7 @@ class Error extends Component {
                         Seems like you've entered a broken link (my bad) or the resource you're looking for doesn't exist.
                     </p>
                     <p>
-                        Check the link again or <Link to="/">Go Back To The Home Page</Link>
+                        Check the link again or <Link to="/">Go Back To Home Page</Link>
                     </p>
                 </div>
             </section>
