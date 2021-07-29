@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import locomotiveScroll from "locomotive-scroll";
-import HomeImage1 from './../images/img-6.png';
-// import HomeImage2 from './../images/img-7.png';
-// import HomeImage4 from './../images/img-8.png';
-import HomeImage7 from './../images/img-12.png';
+import { Link } from 'react-router-dom';
+import LocomotiveScroll from 'locomotive-scroll';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Home extends Component {
-    constructor(props) {
+    /* constructor(props) {
         super(props)
       this.backgrounds = [HomeImage1, HomeImage7]
       this.state = { backgroundIndex: 0 }
@@ -20,10 +18,7 @@ class Home extends Component {
         this.props.animDuration * 1000
       )
 
-      /* const scroll = new locomotiveScroll({
-        el: document.querySelector(".home"),
-        smooth: true
-      }); */
+      
     }
     
     componentWillUnmount() {
@@ -42,24 +37,25 @@ class Home extends Component {
         )
       })
     };
-
+ */
     /* componentDidMount() {
-      const scroll = new locomotiveScroll({
-        el: document.querySelector(".App"),
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector(".Home"),
         smooth: true
       });
     } */
+    // this.backgrounds[this.state.backgroundIndex]
+   
 
     render() {
       return (
-        <section className="home" data-scroll-section>
-          <div className="container" data-scroll>
-            <span className="glitch" data-text="Developer.">Developer<span className="period">.</span></span>
-            <span className="glitch" data-text="Designer.">Designer<span className="period">.</span></span>
-            <span className="glitch" data-text="Creative.">Writer<span className="period">.</span></span>
-          </div>
-          <div className="home-images">
-            <img src={this.backgrounds[this.state.backgroundIndex] } className="home-image" alt="objects in taste with the author's aesthetic" />
+        <section className="Home" data-scroll-section>
+          <div>
+          <p className="paragraph" data-scroll><span className="bright">Hello</span>.</p>
+          <p className="paragraph" data-scroll>I'm <span className="bright">Ebuka Nwaju</span>, a <span className="bright">Developer</span>, <span className="bright">Product Designer</span> and <span className="bright">Creative Writer</span> based in <span className="bright">Lagos</span>.</p>
+            {/* <CTA className="primary" type="button" label="Browse Projects" text="Browse Projects" /> */}
+          <Link to="/projects" className="primary">Browse Projects</Link>
+          <Link to="/about" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
           </div>
         </section>
       )

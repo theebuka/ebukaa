@@ -7,8 +7,8 @@ class Social extends Component {
             <div className="social-list">
                 <ul>
                     <SocialItem path="https://facebook.com/ebuka.nwaju" iconName={['fab', 'facebook-f']} />
-                    <SocialItem path="https://twitter.com/savage_anatii" iconName={['fab', 'twitter']} />
-                    <SocialItem path="https://instagram.com/ebuka.nwaju" iconName={['fab', 'instagram']} />
+                    <SocialItem path="https://twitter.com/ebxkaa" iconName={['fab', 'twitter']} />
+                    <SocialItem path="https://instagram.com/rin.ze" iconName={['fab', 'instagram']} />
                 </ul>
             </div>
         )

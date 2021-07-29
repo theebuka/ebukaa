@@ -1,25 +1,64 @@
 import React, {Component} from 'react';
-import Intro from './../components/intro-sections.js';
-import Skillcard from './../components/skill-card.js';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LocomotiveScroll from 'locomotive-scroll';
+import CTA from "../components/cta.js";
+import ProfileImg from './../images/img-15.jpg';
 
 class About extends Component {
+    componentDidMount() {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector(".About"),
+            smooth: true
+        });
+    }
     render() {
         return (
-            <section className="About">
-                <div className="intro">
-                    <Intro heading="Bio" body="Hi. I’m Ebuka, a frontend developer, UI/UX designer, graphic designer with a flair for writing." />
-                    <Intro heading="Background" body="I'm fully self-taught, i live and work in Lagos and i'm currently studying to get my degree in Medical Radiography at Nnamdi Azikiwe Unversity, Anambra." />
-                    <Intro heading="Experience" body="I've participated in remote internships from Hotels.ng and Andela x Facebook SDG Cohorts." />
-                    <Intro heading="Random" body="I'm a big basketball fan and an even bigger Stephen Curry fanboy. When i’m not fighting to stay alive in medical school, i like exploring new music, reading books and working out on the court. Dogs scare me. Anime is Gold." />
-                </div>
-                <div className="skill">
-                    <h6>Skillset</h6>
-                    <div>
-                        <Skillcard title="Develop" body="Build functional, interactive and responsive webpages with a slew of modern tools, libraries and frameworks made for the web." tools="Html, Css, Javascript, Jquery, React, Bootstrap, WordPress" />
-                        <Skillcard title="Design" body="Design visually appealing and usable interfaces with proficiency in various design software with great attention to detail." tools="Adobe XD, Figma, InVision Studio, Adobe Photoshop, Adobe Illustrator"/>
-                        <Skillcard title="Write" body="Create and proofread engaging content for use in articles, books, websites, products." />
+            <section className="About" data-scroll-section>
+                <p className="paragraph" data-scroll data-scroll-speed="1" data-section="1">
+                    Hi. I'm <span className="bright">Ebuka, frontend developer, designer &amp; technical writer</span> based in Lagos.
+                </p>
+                <div className="photo-wrapper" data-section="3">
+                    <div className="photo-container" data-scroll data-scroll-speed="1" >
+                        <div className="photo-box">
+                             <figure>
+                                <img src={ProfileImg} className="profile-image" alt="ebuka nwaju"></img>
+                            </figure>
+                        </div>
                     </div>
                 </div>
+                <p className="paragraph" data-scroll data-scroll-speed="1" data-section="2">
+                    I specialize in helping <span className="bright">brands and startups</span> develop <span className="bright">fast accessible websites</span>, designing <span className="bright">highly usable and visually appealing interfaces</span> and writing <span className="bright">immmersive copy</span> for their projects to improve their online presence and brand recognition.
+                </p>
+                <p className="paragraph" data-scroll data-scroll-speed="1" data-section="4">
+                    <span className="bright">6+ years of experience</span> building viable responsive frontend web solutions.
+                    {/* with a myriad of frontend technologies such as HTML, CSS, Javascript, Jquery, React, Bootstrap etc. */}
+                </p>
+                <p className="paragraph" data-scroll data-section="5">
+                    <span className="bright">4+ years of experience</span> in UI/UX, Graphic, Logo and branding with over 30 projects.
+                    {/* designing complex (or simple) iterations in various facets of the design industry such as UI/UX, graphic and logo using software such as Adobe XD, Figma, Invision Studio, Framer, Adobe Photoshop and Adobe Illustrator. */}
+                </p>
+                <p className="paragraph" data-scroll data-section="6">
+                    <span className="bright">2+ years of experience</span> creating creative, technical and academic pieces.
+                    {/* Over the past year, i have also transitioned into writing <span className="bright">creative, technical and academic</span> papers or articles. */}
+                </p>
+                <div className="photo-wrapper" data-section="3">
+                    <div className="photo-container" data-scroll data-scroll-speed="1" >
+                        <div className="photo-box">
+                             <figure>
+                                <img src={ProfileImg} className="profile-image" alt="ebuka nwaju"></img>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <p className="paragraph" data-scroll data-section="7">
+                    I have had the priviledge of interning at some of the best programs in the world such as the <span className="bright">HNG 6.0 internship, Andela SDG Cohort 2</span>, to name a few. However, i am currently freelancing and looking to start my own startup.
+                </p>
+                <p className="paragraph" data-scroll data-section="8">
+                    I'm open for <span className="bright">full-time, parttime or freelancing</span> roles as a web developer, designer or writer.
+                </p>
+                <CTA className="primary" type="button" label="Download Resume" text="Download Resume" />
+                <Link to="/projects" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
             </section>
         )
     }

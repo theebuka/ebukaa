@@ -1,17 +1,30 @@
+@font-face {
+  font-family: "Alliance No.2";
+  src: url("fonts/AllianceNo2-Regular.ttf");
+}
 body {
   margin: 0;
   padding: 0;
-  background-color: #020202;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  background-color: #1d1d21;
+  font-family: "Alliance No.2", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 ol, ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 img {
   max-width: 100%;
@@ -21,78 +34,258 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+button.primary, a.primary {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  padding: 5vw 12vw;
+  background-color: var(--secondary);
+  color: var(--primary);
+  border: none;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5vw;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 8vw;
+  cursor: pointer;
+  text-decoration: none;
+}
+button.secondary, a.secondary {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  padding: 5vw 10vw;
+  background-color: transparent;
+  color: var(--secondary);
+  border: 1.5px solid var(--secondary);
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.5vw;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 8vw;
+  cursor: pointer;
+  text-decoration: none;
+}
+button.tertiary, a.tertiary {
+  width: fit-content;
+  height: auto;
+  display: block;
+  padding: 5vw 4vw;
+  background-color: transparent;
+  color: var(--secondary);
+  border: none;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3.5vw;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: 10vh;
+  margin-left: auto;
+  cursor: pointer;
+  text-decoration: none;
+}
 
+/*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh;
+}
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap;
+}
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%;
+}
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100%;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+[data-scroll-direction="horizontal"] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+[data-scroll-direction="horizontal"] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 7px;
+  border-radius: 10px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab; }
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+[data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
+.is-inview {
+  /* animation: fadeIn 2s ease-in-out 1s; */
+  visibility: visible;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transition: all 0.75s ease-out;
+}
+.Home [data-scroll]:not(.is-inview), .About [data-scroll]:not(.is-inview), .Projects [data-scroll]:not(.is-inview), .Contact [data-scroll]:not(.is-inview),.Shop [data-scroll]:not(.is-inview), .Misc [data-scroll]:not(.is-inview), .Error [data-scroll]:not(.is-inview), .Playlist [data-scroll]:not(.is-inview), .Readlist [data-scroll]:not(.is-inview) {
+  visibility: hidden;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 160, 0, 1);
+}
 
+@keyframes fadeIn {
+  0% {
+    /* visibility: hidden; */
+  }
+  100% {
+    visibility: visible;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -695, 0, 1);
+  }
+}
 /* @media only screen and (max-width: 480px) { */
-    nav {
-      display: none;
-    }
     
-    .active {
-      color: #ffffff;
-      border-bottom: 1.5px solid #ffffff;
-    }
     
-    .topbar-wrapper {
+    /* .topbar-wrapper {
       height: fit-content;
       position: relative;
-    }
+    } */
     .topbar {
       width: 100%;
       height: auto;
       display: flex;
-      flex-flow: row;
-      padding: 0;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 2.5vw 2vw 5vw;
       position: fixed;
       z-index: 9998;
       top: 0;
       background-color: transparent;
     }
-    .topbar .logo {
-      display: flex;
-      flex-flow: column;
+    .topbar div.logo {
       height: fit-content;
-      background-color: #020202;
-      padding: 1.2rem 0 0.5rem;
-      margin-left: 6%;
+      padding: 2vw;
+      margin-left: 4%;
     }
-    .topbar .logo span {
-      display: inline-block;
-      width: 40%;
-      height: 2.5px;
-      background-color: #202022;
+    .topbar div.logo img.logo-image {
+      width: 72px;
+      height: 72px;
     }
-    .topbar .logo a {
-      text-decoration: none;
-      color: #ffffff;
-      padding-top: 0.4rem;
-      text-transform: uppercase;
-      font-family: Coco Gothic;
-      font-size: 1.2rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1.4rem;
-      letter-spacing: 0.05em;
-      text-align: left;
+    .topbar nav.mobile-nav {
+      display: block;
+      align-self: center;
     }
-    .topbar a.resume {
-      font-family: Coco Gothic;
-      width: 5vw;
-      min-height: 2vh;
-      padding: 0.2rem 0.6rem;
-      color: #ffffff;
-      background-color: #363636;
-      border-radius: 0.6rem;
-      text-decoration: none;
+    .topbar nav.mobile-nav button {
+      z-index: 9999;
+      background-color: transparent;
+      margin-right: 6vw;
+      border: none;
+      width: auto;
+      height: auto;
+      padding: 2.5vw;
+    }
+    .topbar nav.mobile-nav button svg.menu-icon {
+      color: var(--secondary);
+      font-size: 6vw;
+    }
+    .topbar nav.mobile-nav button svg.menu-icon:hover {
+      cursor: pointer;
+    }
+    .topbar nav.mobile-nav .menuNav {
+      overflow-y: scroll;
+      list-style: none;
+      position: fixed;
+      top: 16vh;
+      background: var(--primary);
+      left: 0;
+      bottom: 0;
+      width: 0;
+      z-index: 9;
+      padding: 0;
+      margin: 0;
       text-align: center;
     }
-    
+    .topbar nav.mobile-nav .menuNav.showMenu {
+      width: 100%;
+      z-index: 9900;
+      padding-top: 6vh;
+      transition: width 0.4s ease-in-out;
+    }
+    .topbar nav.mobile-nav .menuNav li {
+      padding: 0;
+      margin: 0;
+    }
+    .topbar nav.mobile-nav .menuNav a {
+      display: block;
+      font-size: 6vw;
+      padding: 4vw 8vw;
+      margin: 5vw;
+      text-decoration: none;
+      color: var(--accent-a);
+      text-transform: uppercase;
+      /* font-weight: bold; */
+    }
+    .topbar nav.mobile-nav .menuNav a.active {
+      color: var(--secondary);
+      /* border-bottom: 1.5px solid var(--secondary); */
+    }
+    .topbar nav.mobile-nav .menuNav button {
+      position: absolute;
+      top: 3%;
+      right: 2%;
+    }
+    nav.desktop-nav {
+      display: none;
+    }
+
     .social-list {
       width: auto;
       position: fixed !important;
       height: auto;
-      right: 4.5vw;
-      bottom: 0.75vh;
+      right: 5vw;
+      bottom: 1.5vh;
       z-index: 9999;
     }
     .social-list ul {
@@ -104,368 +297,338 @@ code {
       padding: 0.3rem 0.6rem;
     }
     li.social-list-item a svg {
-      color: #ffffff;
+      color: var(--accent-a);
     }
     
-    .disc img {
-     width:100%;
-     animation: rotating 25s linear infinite;
+    /* .disc img {
+     width: 100%;
+     animation: rotating 35s linear infinite;
     }
     .home__disc {
      position:fixed;
-     left:25%;
-     top:25%;
-     width:100vw;
+     left: 25%;
+     top: 25%;
+     width: 100vw;
      -webkit-transform:translate3d(calc(-50% + 28.3vw),calc(-50% + 32vh),0);
      transform:translate3d(calc(-50% + 28.3vw),calc(-50% + 32vh),0);
      pointer-events:none;
      z-index: 1;
-    }
+    } */
     
-    .home, .About, .Projects, .Contact, .Misc, .Error {
+    .Home, .About, .Projects, .Contact,.Shop, .Misc, .Error, .Playlist, .Readlist {
       position: relative;
       margin-top: 12.5vh;
       z-index: 10;
       min-height: 87.5vh;
       box-sizing: border-box;
+      padding: 5vh 6vw 10vh;
     }
     
-    .home {
+    .Home {
       display: flex;
       flex-flow: nowrap column;
     }
-    .home-images {
-      width: 100%;
-      height: 50%;
-      display: flex;
-      flex-flow: nowrap column;
-      justify-content: center;
-      align-items: center;
-      margin-top: 9vh;
+    .Home div {
+      margin: 10vh auto 2vh;
     }
-    .home-image {
-      width: 280px;
-      height: 280px;
-      object-fit: contain;
-      animation: hover 5s ease-in-out infinite alternate;
-    }
-    .home .container {
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-flow: nowrap column;
-      justify-content: flex-end;
-      align-items: flex-end;
-      margin-top: 12vh;
-      margin-right: 8vh;
-    }
-    .home .container > span {
-      color: white;
-      font-size: 12vw;
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 15vw;
-      letter-spacing: 0.06em;
-      display: block;
-    }
-    .home .container > span:nth-child(2) {
-      margin-left: 17.5%;
-    }
-    .home .container > span:nth-child(3) {
-      margin-left: 35%;
-    }
-    .home .period {
-      color: #8d8d8e;
-    }
-    
-    .About .intro {
-      width: 100%;
-      height: auto;
-      margin: 0 0 3rem;
-      padding: 6% 0 0 6%;
-      box-sizing: border-box;
-    }
-    .About .intro > div {
-      margin-bottom: 1.5rem;
-      padding: 0.5rem;
-    }
-    .About .intro p {
-      font-family: Open Sans;
+    .Home div > p {
+      padding-bottom: 7.5vh;
+      color: var(--accent-a);
+      font-family: var(--main-font);
+      font-size: 9vw;
       font-style: normal;
       font-weight: normal;
-      font-size: 1rem;
-      line-height: 2rem;
-      letter-spacing: 0.02rem;
-      color: #FFFFFF;
-      margin: 0.25rem 0 0;
+      line-height: var(--lh-a);
+      letter-spacing: 0.75vw;
     }
-    .About .intro p:hover {
-      animation: glitch 1.5s linear infinite, glitchTop 1.5s linear infinite, glitchBottom 1.5s linear infinite;
+    .Home div p:nth-of-type(2n).paragraph  {
+      padding: 0 0 7.5vh;
+      text-align: right;
     }
-    .About .skill {
-      width: fit-content;
-      margin: 6vh 0 3rem;
-      padding-left: 6%;
-      box-sizing: border-box;
+    .bright {
+      color: var(--secondary);
     }
-    .About .skill h6, .About .intro h6 {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 0.75rem;
-      line-height: 1.1rem;
-      letter-spacing: 0.02em;
-      margin: 0 0 0.66rem;
-      color: #363636;
-      text-transform: uppercase;
+
+    .About div.photo-wrapper {
+      position: relative;
+      height: 65vh;
+      margin-bottom: 8vh;
+      overflow-x: clip;
     }
-    .About .skill > div {
-      display: flex;
-      flex-flow: column;
-      width: fit-content;
+    .About div.photo-wrapper div.photo-container {
+      max-width: 45.2rem;
+      position: relative;
+      height: 100%;
     }
-    .About .skill > div div {
-      margin-bottom: 1.25rem;
-      padding: 0.5rem;
+    .About div.photo-wrapper div.photo-container div.photo-box {
+      width: 100%;
+      position: relative;
+      height: 100%;
     }
-    .About .skill > div:last-child {
-      margin-right: 0;
+    .About div.photo-wrapper div.photo-container div.photo-box figure {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
-    .About .skill > div div h2 {
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.5rem;
-      line-height: 2rem;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      margin: 0 0 0.2rem;
+    .About div.photo-wrapper div.photo-container div.photo-box figure img.profile-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin-left: 15vw;
+      vertical-align: middle;
     }
-    .About .skill > div div h2 span {
-      color: #363636;
-    }
-    .About .skill > div div p {
-      font-family: Open Sans;
+    .About p.paragraph {
+      color: var(--accent-a);
+      font-family: var(--main-font);
+      font-size: 9vw;
       font-style: normal;
       font-weight: normal;
-      font-size: 0.88rem;
-      line-height: 1.5rem;
-      letter-spacing: 0.02em;
-      color: #f7f7f7;
+      line-height: var(--lh-a);
+      letter-spacing: 0.04em;
+      padding-bottom: 7.5vh;
+      /* margin: auto auto 7vw; */
     }
-    .About .skill > div div p:last-child {
-      font-family: Open Sans;
-      font-style: italic;
-      font-weight: normal;
-      font-size: 0.6rem;
-      line-height: 1rem;
-      letter-spacing: 0.02em;
-      color: green;
-      text-transform: uppercase;
+    .About p:nth-of-type(2n).paragraph  {
+      padding: 0 0 7.5vh;
+      text-align: right;
     }
-    
-    .Projects {
-      padding: 8vh 0 2vh 6vw;
-    }
+
+    /* .Projects {
+      padding-top: 6vh;
+    } */
     .Projects .tab-list {
-      border-bottom: 1px solid #5a5a5a;
       padding-left: 0;
       width: 100%;
-      margin: 1.5% 0 6%;
+      margin: 2vw 0 10vw;
     }
     .Projects .tab-list-item {
       display: inline-block;
       list-style: none;
       margin-bottom: -1px;
-      padding: 0.75rem 1rem;
+      padding: 3vw 4vw;
       cursor: pointer;
-      color: #ffffff;
-      font-size: 0.8rem;
+      color: var(--accent-a);
+      font-size: 3.5vw;
     }
     .Projects .tab-list-active {
-      background-color: #202022;
+      background-color: var(--secondary);
+      color: var(--primary);
+      border-radius: 1vw;
     }
     .Projects .dev-card {
-      background-image: linear-gradient(to bottom, #202022 0%, #202022 100%);
-      background-color: #202022;
-      padding: 0.6rem 1rem;
-      margin: 0 0 1rem;
-      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: var(--primary-dark);
+      padding: 8vh 8vw;
+      margin: 0 0 6vh;
+      border-radius: 1vw;
       transition: all 0.4s ease-in-out;
-      width: 80vw;
+      width: 100%;
+      height: 30vh;
     }
     .Projects .dev-card:hover {
-      transform: scale(1.1);
-      background-image: linear-gradient(to bottom, #404044 0%, #303033 100%);
+      transform: scale(1.02);
     }
-    .Projects .dev-card > div:first-child {
-      display: flex;
-      flex-flow: row nowrap;
-      margin: 0 0 0.1rem;
-    }
-    .Projects .dev-card > div:first-child div:first-child, .Projects .dev-card > div:first-child div:last-child {
-      width: auto;
-    }
-    .Projects .dev-card > div:first-child div:first-child h4 {
-      color: #ffffff;
-      font-size: 0.8rem;
-      font-family: Open Sans;
+    .Projects .dev-card > div:first-child h4 {
+      color: var(--secondary);
+      font-size: 4vw;
+      font-family: var(--main-font);
       font-weight: normal;
-      font-style: normal;
-      padding: 0.25rem;
-      width: fit-content;
+      font-style: bold;
+      letter-spacing: 0.5vw;
+      padding: 1vw 0;
       margin: 0;
-      display: inline-block;
     }
-    .Projects .dev-card > div:first-child div:first-child span {
-      color: green;
-      font-size: 0.6rem;
-      font-family: Open Sans;
+    .Projects .dev-card > div:first-child span {
+      color: var(--accent-a);
+      font-size: 2.5vw;
+      font-family: var(--sub-font);
       font-weight: normal;
       font-style: normal;
-      padding: 0.25rem 0.5rem;
+      padding: 1vh 0;
       text-transform: uppercase;
     }
-    .Projects .dev-card > div:first-child ul {
+    .Projects .dev-card > ul {
       padding: 0;
-      margin: 0 0 0 1.5rem;
+      margin: 0;
     }
-    .Projects .dev-card > div:first-child ul li.social-list-item{
-      padding: 0 0.5rem;
-      display: inline;
+    .Projects .dev-card > ul li {
+      padding: 1.5vh 3vw;
+      color: var(--secondary);
+      display: inline-block;
     }
-    .Projects .dev-card > div:last-child p {
-      color:#ffffff;
-      font-size: 0.8rem;
-      line-height: 1.2rem;
-      font-family: Open Sans Light;
+    .Projects .dev-card > ul li.project-page-list {
+      border-radius: 1vw;
+      margin-left: auto;
+    }
+    .Projects .dev-card > ul li a {
+      padding: 0 3vw 0 0;
+      font-family: var(--main-font);
       font-weight: normal;
       font-style: normal;
-      padding: 0.25rem;
-      margin: 0;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+    .Projects .dev-card > ul li.project-page-list:hover {
+      background-color: var(--accent-c);
+      /* color: var(--secondary); */
+    }
+    .Projects .dev-card > div:last-of-type p {
+      color:var(--secondary);
+      font-size: 3.8vw;
+      line-height: var(--lh-a);
+      font-family: var(--sub-font);
+      font-weight: lighter;
+      font-style: normal;
+      letter-spacing: 0.25vw;
+      padding: 3vh 0;
     }
     
     .Contact {
       display: flex;
       flex-flow: column;
     }
-    .Contact > div:last-child {
-      /* padding: 2rem; */
-      /* width: 100%; */
-      display: flex;
-      flex-flow: nowrap column;
-      align-items: center;
-      justify-content: center;
+    .Contact p.paragraph {
+      color: var(--accent-a);
+      font-family: var(--main-font);
+      font-size: 8vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: var(--lh-a);
+      letter-spacing: 0.04em;
+      padding: 5vw 5vw 5vw 0;
+      margin: 0 auto 0;
+    }
+    .Contact > div:first-child {
+      margin: 0 0 8vh;
+    }
+    .Contact > div:first-child ul.social-contact {
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex !important;
+      flex-flow: row wrap !important;
+    }
+    .Contact > div:first-child div.social-contact li {
+      flex: 1 0 20% !important;
+    }
+    .Contact > div:first-child div:last-child {
+      height: 30vh;
+      width: 100%;
+    }
+    .Contact > div:first-child div:last-child img.contact-image {
+      width: 100%;
+      height: 100%;
     }
     .Contact > div:last-child form {
       box-sizing: border-box;
-      padding: 1.5rem 0;
-      width: auto;
+      padding: 3vw;
+      display: block;
     }
     .Contact > div:last-child form label {
       display: inline-block;
-      font-family: Open Sans;
+      font-family: var(--sub-font);
       font-style: normal;
-      font-weight: bold;
-      font-size: 0.75rem;
-      line-height: 1.3rem;
-      letter-spacing: 0.02em;
+      font-weight: normal;
+      font-size: 3.5vw;
+      line-height: var(--lh-a);
+      letter-spacing: 0.5vw;
       color: #f7f7f7;
-      margin-bottom: 0.25rem;
+      margin-bottom: 1.25vw;
     }
     .Contact > div:last-child form input, .Contact > div:last-child form select, .Contact > div:last-child form textarea {
-      padding: 0.8rem;
-      background-color: #202022;
-      color: #ffffff;
-      border: none;
-      font-family: Open Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      letter-spacing: 0.05rem;
-      display: block;
-      margin: 0 0 1.25rem !important;
-      width: 80%;
-    }
-    .Contact > div:last-child form button {
-      width: auto;
-      height: auto;
-      padding: 1rem 2.5rem;
-      background-color: #ffffff;
-      color: #202022;
-      border: none;
-      font-family: Coco Gothic;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 0.75rem;
-      letter-spacing: 0.05rem;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 1.5rem;
-    }
-    .Contact > div:first-child {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 8vh 0 6vh;
-    }
-    .Contact > div:first-child ul {
-      margin: 0;
-      padding: 0;
-    }
-    .Contact > div:first-child p {
-      color: #ffffff;
-      font-size: 1rem;
-      line-height: 1.75rem;
-      letter-spacing: 0.02rem;
-      font-family: Open Sans;
-      font-weight: normal;
       padding: 1rem;
-      margin-bottom: 0;
+      background-color: var(--secondary);
+      color: var(--primary);
+      border: none;
+      font-family: var(--main-font);
+      font-style: normal;
+      font-weight: normal;
+      font-size: 5vw;
+      line-height: var(--lh-a);
+      letter-spacing: 0.5vw;
+      display: block;
+      margin: 0 0 3vw;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .Contact > div:last-child form input:focus, .Contact > div:last-child form select:active, .Contact > div:last-child form textarea:active {
+      background-color: transparent;
+      border: 1px solid var(--secondary);
+      outline: none;
+    }
+    .Contact > div:last-child form input:valid, .Contact > div:last-child form select:valid, .Contact > div:last-child form textarea:valid {
+      background-color: var(--primary-dark);
+      color: var(--secondary);
+    }
+    .Contact > div:last-child form input:user-invalid, .Contact > div:last-child form select:user-invalid, .Contact > div:last-child form textarea:user-invalid {
+      /* border: 1.5px wavy red; */
+      background-color: rgba(180, 0, 0, 0.2);
     }
     .Contact ul li.social-icon {
-      font-size: 0.8rem;
-      color: #565656;
+      font-size: 4vw;
+      color: var(--accent-a);
       padding: 0.05rem;
     }
     .Contact ul li.social-icon:hover {
-      color: #ffffff;
+      color: var(--secondary);
     }
     
-    .Misc > div:first-child {
-      padding: 1rem;
-      margin: 2rem 0;
-      margin-left: 12.5%;
-      width: auto;
+    .Shop {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
     }
-    .Misc > div:first-child > span {
-      color: #ffffff;
+    .Shop div:first-child {
+      text-align: center;
+    }
+    .Shop div:first-child span {
+      font-family: "Alliance No.2";
+      font-size: 8vw;
       display: block;
-      font-size: 1.5rem;
-      line-height: 2.25rem
+      margin-bottom: 10vw;
+    }
+
+
+    .Misc > div:first-child {
+      margin: 0 0 10vw;
+    }
+    .Misc p.paragraph {
+      color: var(--accent-a);
+      font-family: var(--main-font);
+      font-size: 8vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: var(--lh-a);
+      letter-spacing: 0.5vw;
+      padding: 5vw 5vw 5vw 0;
+      margin: 0;
     }
     .Misc > div:last-child {
-      width: 84%;
-      margin-left: 12.5%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-flow: column nowrap;
     }
     .Misc > div:last-child > div.tab {
       position: relative;
-      height: 15vh;
-      background-color: #202022;
-      margin-right: 20%;
-      margin-bottom: 10%;
-      padding: 2rem 2rem;
+      height: 30vh;
+      width: 100%;
+      background-color: var(--primary-dark);
+      color: var(--secondary);
+      margin: 0 auto 5vh;
+      padding: 1.5rem;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
       align-items: center;
-      font-family: Open sans;
+      font-family: var(--sub-font);
       transition: all 0.4s ease-in-out;
     }
+    
     .Misc > div:last-child > div a {
       display: block;
       width: 100%;
@@ -480,23 +643,27 @@ code {
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      padding: 2rem;
-    }
-    .Misc > div:last-child > div.tab:hover  {
-      /* background-image: linear-gradient(to bottom, #f523a7 0%, #ff9408 100%); */
-      background-image: linear-gradient(to bottom, #404044 0%, #303033 100%);
-      transform: scale(1.1);
+      padding: 4vw 6vw;
     }
     .Misc > div:last-child > div > a h3 {
       margin-top: 0;
-      color: #ffffff;
+      color: var(--secondary);
+      margin-bottom: 8vw;
     }
     .Misc > div:last-child > div > a p {
-      color: #9a9a9a;
-      font-size: 0.8rem;
-      line-height: 1.2rem;
+      color: var(--accent-a);
+      font-size: 3.5vw;
+      text-align: center;
+      line-height: var(--lh-a);
     }
-    
+    .Misc > div:last-child > div.tab:hover  {
+      background-color: var(--accent-c);
+      color: var(--primary-dark);
+      transform: scaleY(1.05);
+    }
+    .Misc > div:last-child > div.tab:hover > a p, .Misc > div:last-child > div.tab:hover > a h3 {
+      color: var(--secondary);
+    }
     .misc-header {
       display: flex;
       align-items: center;
@@ -506,15 +673,15 @@ code {
     }
     .misc-header h1 {
       margin: 0;
-      color: #ffffff;
-      font-family: Coco Gothic;
+      color: var(--secondary);
+      font-family: var(--main-font);
       padding: 1.5rem;
     }
     .misc-header a {
       display: inline-block;
-      background-color: #121212;
+      background-color: var(--primary);
       padding: 0.5rem 1.6rem;
-      color: #ffffff;
+      color: var(--secondary);
       position: absolute;
       top: 0;
       left: 0;
@@ -526,13 +693,13 @@ code {
       grid-template-columns: repeat(2, 1fr);
     }
     .Playlist > div h3, .Readlist > div h3 {
-      font-family: Open Sans;
+      font-family: var(--sub-font);
       font-weight: normal;
       font-style: normal;
       color: #5a5a5a;
     }
     .Playlist > div div.item, .Readlist > div div.item {
-      background-color: #202022;
+      background-color: var(--primary);
       padding: 0.75rem 2rem;
       margin: 0 5% 1rem 0;
       border-radius: 2px;
@@ -545,9 +712,9 @@ code {
       width: 33%;
     }
     .Playlist > div div.item > div:first-child span:first-child, .Readlist > div div.item > div:first-child span:first-child {
-      color: #ffffff;
+      color: var(--secondary);
       font-size: 0.9rem;
-      font-family: Open Sans;
+      font-family: var(--sub-font);
       font-weight: normal;
       font-style: normal;
       padding: 0.25rem;
@@ -567,7 +734,7 @@ code {
     .Readlist > div div.item > div:last-child span:last-child {
       color: #5a5a5a;
       font-size: 0.75rem;
-      font-family: Open Sans;
+      font-family: var(--sub-font);
       font-weight: normal;
       font-style: normal;
       padding: 0.25rem;
@@ -587,29 +754,29 @@ code {
     .Error img {
     }
     .Error h1 {
-      font-size: 3.5rem;
-      color: #ffffff;
-      font-family: Open Sans;
-      margin: 0.5rem 0 0;
+      font-size: 15vw;
+      color: var(--secondary);
+      font-family: var(--main-font);
+      margin: 2.5vw 0 0;
     }
     .Error h3 {
-      font-size: 1rem;
-      color: #5a5a5a;
-      font-family: Open Sans;
+      font-size: 3.5vw;
+      color: var(--accent-a);
+      font-family: var(--sub-font);
       font-weight: normal;
       margin: 0;
     }
     .Error p {
       width: fit-content;
-      padding: 1.5rem 1.5rem 0;
-      color: #ffffff;
-      line-height: 1.5rem;
-      font-size: 0.75rem;
-      font-family: Open Sans;
+      padding: 6.5vw 6.5vw 0;
+      color: var(--secondary);
+      line-height: var(--lh-a);
+      font-size: 4vw;
+      font-family: var(--main-font);
       font-weight: normal;
     }
     
-    @keyframes hover {
+ /*    @keyframes hover {
       from {
         transform: translateY(16px);
       }
@@ -708,8 +875,7 @@ code {
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
       }
-    }
-  /* } */
+    } */
 
 @media screen and (min-width: 1024px) {
   .Loading {
@@ -723,9 +889,9 @@ code {
   }
   .Loading div > span:first-child {
     text-transform: uppercase;
-    font: bold 26vmax/.8 Open Sans;
+    font: bold 26vmax/.8 var(--sub-font);
     display: table;
-    color: #202022;
+    color: var(--primary);
     mix-blend-mode: multiply;
     color: white;
   }
@@ -770,12 +936,12 @@ code {
     font-style: normal;
     font-weight: normal;
     font-size: 0.66rem;
-    line-height: 0.66rem;
+    line-height: var(--lh-a);
     letter-spacing: 0.02em;
   }
   .active {
-    color: #ffffff;
-    border-bottom: 1.5px solid #ffffff;
+    color: var(--secondary);
+    border-bottom: 1.5px solid var(--secondary);
   }
   
   .topbar-wrapper {
@@ -804,28 +970,28 @@ code {
     display: inline-block;
     width: 30px;
     height: 4px;
-    background-color: #202022;
+    background-color: var(--primary);
   }
   .topbar .logo a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--secondary);
     padding-top: 0.5rem;
     width: 91px;
     text-transform: uppercase;
-    font-family: Coco Gothic;
+    font-family: var(--main-font);
     font-size: 1.25rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.35rem;
+    line-height: var(--lh-a);
     letter-spacing: 0.025em;
     text-align: left;
   }
   .topbar a.resume {
-    font-family: Coco Gothic;
+    font-family: var(--main-font);
     width: 5vw;
     min-height: 2vh;
     padding: 0.2rem 0.6rem;
-    color: #ffffff;
+    color: var(--secondary);
     background-color: #363636;
     border-radius: 0.6rem;
     text-decoration: none;
@@ -850,7 +1016,7 @@ code {
     padding: 0.6rem;
   }
   li.social-list-item a svg {
-    color: #ffffff;
+    color: var(--secondary);
   }
   
   .disc img {
@@ -886,6 +1052,22 @@ code {
     flex-flow: nowrap row;
     align-items: center;
   }
+  .home div {
+    color: var(--accent-a);
+    font-family: var(--main-font);
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--lh-a);
+    letter-spacing: 0.04em;
+    padding: 5vw;
+  }
+  .home div > span {
+    display: block;
+  }
+  .bright {
+    color: var(--secondary);
+  }
   .home-images {
     width: 50%;
     height: 100%;
@@ -911,10 +1093,10 @@ code {
   .home .container > span {
     color: white;
     font-size: 6vw;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: 700;
-    line-height: 7vw;
+    line-height: var(--lh-a);
     letter-spacing: 0.04em;
     display: block;
   }
@@ -938,13 +1120,13 @@ code {
     margin-bottom: 3.5rem;
   }
   .About .intro p {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: normal;
     font-size: 1.5rem;
-    line-height: 2.5rem;
+    line-height: var(--lh-a);
     letter-spacing: 0.12rem;
-    color: #FFFFFF;
+    color: var(--secondary);
     margin: 0.25rem 0 0;
   }
   .About .intro p:hover {
@@ -955,11 +1137,11 @@ code {
     width: fit-content;
   }
   .About .skill h6, .About .intro h6 {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: bold;
     font-size: 11px;
-    line-height: 18px;
+    line-height: var(--lh-a);
     letter-spacing: 0.02em;
     margin: 0 0 0.66rem;
     color: #363636;
@@ -978,33 +1160,33 @@ code {
     margin-right: 0;
   }
   .About .skill > div div h2 {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: bold;
     font-size: 32px;
-    line-height: 36px;
+    line-height: var(--lh-a);
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: var(--secondary);
     margin: 0 0 1rem;
   }
   .About .skill > div div h2 span {
     color: #363636;
   }
   .About .skill > div div p {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 24px;
+    line-height: var(--lh-a);
     letter-spacing: 0.02em;
     color: #f7f7f7;
   }
   .About .skill > div div p:last-child {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: italic;
     font-weight: normal;
     font-size: 0.6rem;
-    line-height: 16px;
+    line-height: var(--lh-a);
     letter-spacing: 0.02em;
     color: green;
     text-transform: uppercase;
@@ -1022,14 +1204,14 @@ code {
     margin-bottom: -1px;
     padding: 0.75rem 2.5rem;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--secondary);
   }
   .Projects .tab-list-active {
-    background-color: #202022;
+    background-color: var(--primary);
   }
   .Projects .dev-card {
-    background-image: linear-gradient(to bottom, #202022 0%, #202022 100%);
-    background-color: #202022;
+    background-image: linear-gradient(to bottom, var(--primary) 0%, var(--primary) 100%);
+    background-color: var(--primary);
     padding: 0.75rem 2rem;
     margin: 0 0 1rem 12.5%;
     border-radius: 2px;
@@ -1049,9 +1231,9 @@ code {
     width: 50%;
   }
   .Projects .dev-card > div:first-child div:first-child h4 {
-    color: #ffffff;
+    color: var(--secondary);
     font-size: 0.9rem;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     font-style: normal;
     padding: 0.25rem;
@@ -1061,16 +1243,16 @@ code {
   .Projects .dev-card > div:first-child div:first-child span {
     color: green;
     font-size: 0.6rem;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     font-style: normal;
     padding: 0.25rem;
     text-transform: uppercase;
   }
   .Projects .dev-card > div:last-child p {
-    color:#ffffff;
+    color:var(--secondary);
     font-size: 0.75rem;
-    font-family: Open Sans Light;
+    font-family: var(--sub-font) Light;
     font-weight: normal;
     font-style: normal;
     padding: 0.25rem;
@@ -1088,11 +1270,11 @@ code {
     justify-content: center;
   }
   .Contact > div:last-child form label {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: bold;
     font-size: 0.75rem;
-    line-height: 21px;
+    line-height: var(--lh-a);
     letter-spacing: 0.02em;
     color: #5a5a5a;
   }
@@ -1100,14 +1282,14 @@ code {
     width: 20rem;
     height: auto;
     padding: 0.6rem;
-    background-color: #202022;
-    color: #ffffff;
+    background-color: var(--primary);
+    color: var(--secondary);
     border: none;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-style: normal;
     font-weight: normal;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: var(--lh-a);
     letter-spacing: 0.05rem;
     display: block;
     margin-bottom: 1.25rem;
@@ -1116,10 +1298,10 @@ code {
     width: auto;
     height: auto;
     padding: 0.8rem 1.6rem;
-    background-color: #ffffff;
+    background-color: var(--secondary);
     color: #363636;
     border: none;
-    font-family: Coco Gothic;
+    font-family: var(--main-font);
     font-style: normal;
     font-weight: normal;
     font-size: 0.75rem;
@@ -1139,21 +1321,21 @@ code {
     padding: 0;
   }
   .Contact > div:first-child p {
-    color: #ffffff;
+    color: var(--secondary);
     font-size: 1.5rem;
-    line-height: 2.5rem;
+    line-height: var(--lh-a);
     letter-spacing: 0.02rem;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     padding: 0.2rem;
     width: 80%;
   }
   .Contact .social-icon {
     font-size: 1.5rem;
-    color: #565656;
+    color: var(--accent-a);
   }
   .Contact .social-icon:hover {
-    color: #ffffff;
+    color: var(--secondary);
   }
   
   .Misc > div:first-child {
@@ -1163,10 +1345,10 @@ code {
     width: auto;
   }
   .Misc > div:first-child > span {
-    color: #ffffff;
+    color: var(--secondary);
     display: block;
     font-size: 1.5rem;
-    line-height: 2.25rem
+    line-height: var(--lh-a);
   }
   .Misc > div:last-child {
     width: 84%;
@@ -1177,7 +1359,7 @@ code {
   .Misc > div:last-child > div.tab {
     position: relative;
     height: 15vh;
-    background-color: #202022;
+    background-color: var(--primary);
     margin-right: 20%;
     margin-bottom: 10%;
     padding: 2rem 2rem;
@@ -1185,7 +1367,7 @@ code {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    font-family: Open sans;
+    font-family: var(--sub-font);
     transition: all 0.4s ease-in-out;
   }
   .Misc > div:last-child > div a {
@@ -1211,12 +1393,12 @@ code {
   }
   .Misc > div:last-child > div > a h3 {
     margin-top: 0;
-    color: #ffffff;
+    color: var(--secondary);
   }
   .Misc > div:last-child > div > a p {
-    color: #9a9a9a;
+    color: var(--accent-a);
     font-size: 0.8rem;
-    line-height: 1.2rem;
+    line-height: var(--lh-a);
   }
   
   .misc-header {
@@ -1228,15 +1410,15 @@ code {
   }
   .misc-header h1 {
     margin: 0;
-    color: #ffffff;
-    font-family: Coco Gothic;
+    color: var(--secondary);
+    font-family: var(--main-font);
     padding: 1.5rem;
   }
   .misc-header a {
     display: inline-block;
-    background-color: #121212;
+    background-color: var(--primary);
     padding: 0.5rem 1.6rem;
-    color: #ffffff;
+    color: var(--secondary);
     position: absolute;
     top: 0;
     left: 0;
@@ -1248,13 +1430,13 @@ code {
     grid-template-columns: repeat(2, 1fr);
   }
   .Playlist > div h3, .Readlist > div h3 {
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     font-style: normal;
     color: #5a5a5a;
   }
   .Playlist > div div.item, .Readlist > div div.item {
-    background-color: #202022;
+    background-color: var(--primary);
     padding: 0.75rem 2rem;
     margin: 0 5% 1rem 0;
     border-radius: 2px;
@@ -1267,9 +1449,9 @@ code {
     width: 33%;
   }
   .Playlist > div div.item > div:first-child span:first-child, .Readlist > div div.item > div:first-child span:first-child {
-    color: #ffffff;
+    color: var(--secondary);
     font-size: 0.9rem;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     font-style: normal;
     padding: 0.25rem;
@@ -1289,7 +1471,7 @@ code {
   .Readlist > div div.item > div:last-child span:last-child {
     color: #5a5a5a;
     font-size: 0.75rem;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     font-style: normal;
     padding: 0.25rem;
@@ -1312,21 +1494,21 @@ code {
   }
   .Error h1 {
     font-size: 3.5rem;
-    color: #ffffff;
-    font-family: Open Sans;
+    color: var(--secondary);
+    font-family: var(--sub-font);
     margin: 0.5rem 0 0;
   }
   .Error h3 {
     font-size: 1rem;
     color: #5a5a5a;
-    font-family: Open Sans;
+    font-family: var(--sub-font);
     font-weight: normal;
     margin: 0;
   }
   .Error p {
     width: fit-content;
-    color: #ffffff;
-    line-height: 2rem;
+    color: var(--secondary);
+    line-height: var(--lh-a);
     margin: auto;
   }
   

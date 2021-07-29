@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+/* import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; */
 import MiscTab from './../components/misc-tabs.js';
 
 class Misc extends Component {
@@ -32,7 +34,7 @@ class Misc extends Component {
             {
                 heading: "Maestros",
                 path: "misc/creatives",
-                body: "This is a board of creatives and creators i like."
+                body: "This is a thread of creatives and creators i like."
             },
             {
                 heading: "Vendors",
@@ -54,14 +56,16 @@ class Misc extends Component {
         return(
             <section className="Misc">
                 <div>
-                    <span>This is a curated section of my favorite stuff.</span>
-                    <span>JSYK, I have excellent taste *chef's kiss*, so don't fret. </span>
+                    <p className="paragraph">
+                        This is a curated section of my <span className="bright">favorite stuff</span>. JSYK, I have <span className="bright">excellent taste</span> *chef's kiss*, so <span className="bright">don't fret</span>.
+                    </p>
                 </div>
                 <div>
                     {tabs.map(function(tab) {
-                        return <MiscTab key={tab.id} path={tab.path} heading={tab.heading} body={tab.body} />
+                        return <MiscTab key={tabs} path={tab.path} heading={tab.heading} body={tab.body} />
                     })}
                 </div>
+                {/* <Link to="/projects" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link> */}
             </section>
         )
     }

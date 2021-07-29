@@ -4,9 +4,9 @@ import Navitem from './navitem.js';
 class Navigation extends Component {
     render() {
         return (
-            <nav className="">
+            <nav className="desktop-nav">
                 <div>
-                    <ul className="">
+                    <ul className="desktop-nav-list">
                         <Navitem path="/" label="Home" />
                         <Navitem path="/about" label="About" />
                         <Navitem path="/projects" label="Projects" />
