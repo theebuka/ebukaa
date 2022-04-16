@@ -11,6 +11,18 @@ class SocialItem extends Component {
             </li>
         )
     }
+}
+
+class SocialItemBlock extends Component {
+    render() {
+        return (
+            <div className="contact-social-list">
+                <a href={this.props.path} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={this.props.iconName} size="lg" className="social-icon"/>
+                </a>
+            </div>
+        )
+    }
 };
 
-export default SocialItem;
+export {SocialItem, SocialItemBlock};

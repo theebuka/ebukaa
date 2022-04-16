@@ -1,33 +1,42 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import LocomotiveScroll from 'locomotive-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tabs from './../components/project-nav.js';
-import DevCard from './../components/project-card.js';
-import {devs, design, writing} from './../data/project-data.js';
+import Project from './../components/projects-card.js';
+import {dev, design, writing} from './../data/project-data.js';
 
 class Projects extends Component {
+    componentDidMount() {
+        // eslint-disable-next-line
+        const scroll = new LocomotiveScroll({
+          el: document.querySelector(".Projects"),
+          smooth: true
+        });
+    }
+
     render() {
         return(
             <section className="Projects">
                 <div>
-                    <Tabs>
+                    <Tabs data-scroll>
                         <div label="Development">
-                            {devs.map(function (item) {
-                                return <DevCard key={devs} title={item.title} synopsis={item.body} stack={item.stack} linkGithub={item.github} linkSite={item.site} />
+                            {dev.map(function (item) {
+                                return <Project key={dev.id} title={item.title} summary={item.summary} stack={item.stack} link={item.link} path={item.path} iconName={item.icon} data-scroll />
                             })}
                         </div>
                         <div label="Design">
                             {design.map(function (item) {
-                                return <DevCard key={design} title={item.title} synopsis={item.body} stack={item.stack} linkGithub={item.github} linkSite={item.site} />
+                                return <Project key={design} title={item.title} summary={item.summary} stack={item.stack} link={item.link} path={item.path} iconName={item.icon} />
                             })}
                         </div>
                         <div label="Writing">
                             {writing.map(function (item) {
-                                return <DevCard key={writing} title={item.title} synopsis={item.body} stack={item.stack} linkGithub={item.github} linkSite={item.site} />
+                                return <Project key={writing} title={item.title} summary={item.summary} stack={item.stack} link={item.link} path={item.path} iconName={item.icon} />
                             })}
                         </div>
                     </Tabs>
-                <Link to="/contact" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                    <Link to="/shop" className="tertiary" data-scroll>Shop <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
                 </div>
             </section>
         )

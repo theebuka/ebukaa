@@ -5,7 +5,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #1d1d21;
+  background-color: var(--primary);
   font-family: "Alliance No.2", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -166,25 +166,18 @@ html.has-scroll-dragging {
   bottom: 0;
 }
 .is-inview {
-  /* animation: fadeIn 2s ease-in-out 1s; */
   visibility: visible;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-  transition: all 0.75s ease-out;
+  opacity: 100%;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) rotate(0);
+  transition: all 1.5s linear 0.5s;
 }
 .Home [data-scroll]:not(.is-inview), .About [data-scroll]:not(.is-inview), .Projects [data-scroll]:not(.is-inview), .Contact [data-scroll]:not(.is-inview),.Shop [data-scroll]:not(.is-inview), .Misc [data-scroll]:not(.is-inview), .Error [data-scroll]:not(.is-inview), .Playlist [data-scroll]:not(.is-inview), .Readlist [data-scroll]:not(.is-inview) {
   visibility: hidden;
-  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 160, 0, 1);
+  opacity: 0;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 80, 0, 1) rotate(1deg);
 }
 
-@keyframes fadeIn {
-  0% {
-    /* visibility: hidden; */
-  }
-  100% {
-    visibility: visible;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -695, 0, 1);
-  }
-}
+
 /* @media only screen and (max-width: 480px) { */
     
     
@@ -207,11 +200,13 @@ html.has-scroll-dragging {
     .topbar div.logo {
       height: fit-content;
       padding: 2vw;
-      margin-left: 4%;
+      background-color: var(--primary);
+      /* margin-left: 1vw; */
     }
     .topbar div.logo img.logo-image {
-      width: 72px;
-      height: 72px;
+      width: 60px;
+      aspect-ratio: 1;
+      /* height: 72px; */
     }
     .topbar nav.mobile-nav {
       display: block;
@@ -220,11 +215,11 @@ html.has-scroll-dragging {
     .topbar nav.mobile-nav button {
       z-index: 9999;
       background-color: transparent;
-      margin-right: 6vw;
+      margin-right: 4vw;
       border: none;
       width: auto;
       height: auto;
-      padding: 2.5vw;
+      padding: 0 2.5vw 2.5vw;
     }
     .topbar nav.mobile-nav button svg.menu-icon {
       color: var(--secondary);
@@ -245,13 +240,16 @@ html.has-scroll-dragging {
       z-index: 9;
       padding: 0;
       margin: 0;
+      opacity: 0;
       text-align: center;
+      transition: opacity 0.75s linear 0.25s;
     }
     .topbar nav.mobile-nav .menuNav.showMenu {
       width: 100%;
       z-index: 9900;
       padding-top: 6vh;
-      transition: width 0.4s ease-in-out;
+      opacity: 100%;
+      transition: opacity 0.75s linear 0.25s;
     }
     .topbar nav.mobile-nav .menuNav li {
       padding: 0;
@@ -265,11 +263,9 @@ html.has-scroll-dragging {
       text-decoration: none;
       color: var(--accent-a);
       text-transform: uppercase;
-      /* font-weight: bold; */
     }
     .topbar nav.mobile-nav .menuNav a.active {
       color: var(--secondary);
-      /* border-bottom: 1.5px solid var(--secondary); */
     }
     .topbar nav.mobile-nav .menuNav button {
       position: absolute;
@@ -299,7 +295,26 @@ html.has-scroll-dragging {
     li.social-list-item a svg {
       color: var(--accent-a);
     }
-    
+    .Home svg.round-text {
+      margin: auto;
+      height: auto;
+      transform-origin: center;
+      z-index: 9;
+    }
+    .Home svg.round-text text {
+      fill: var(--accent-a);
+      font-family: var(--sub-font);
+      letter-spacing: 0.13rem;
+    }
+    .Footer > div.bottom {
+      padding: 4vh 0;
+    }
+    .Footer > div.bottom span {
+      font-size: 3.5vw;
+      color: var(--accent-c);
+    }
+
+
     /* .disc img {
      width: 100%;
      animation: rotating 35s linear infinite;
@@ -315,33 +330,80 @@ html.has-scroll-dragging {
      z-index: 1;
     } */
     
-    .Home, .About, .Projects, .Contact,.Shop, .Misc, .Error, .Playlist, .Readlist {
+    .Home, .About, .Projects, .Contact, .Shop, .Misc, .Error, .Case-study, .Playlist, .Readlist {
       position: relative;
       margin-top: 12.5vh;
       z-index: 10;
       min-height: 87.5vh;
       box-sizing: border-box;
-      padding: 5vh 6vw 10vh;
+      padding: 5vh 4.5vw 10vh;
     }
     
     .Home {
       display: flex;
       flex-flow: nowrap column;
     }
-    .Home div {
-      margin: 10vh auto 2vh;
+    .Home > div:nth-child(1) {
+      margin: 32vh auto 2vh;
     }
-    .Home div > p {
-      padding-bottom: 7.5vh;
-      color: var(--accent-a);
+    .Home > div:nth-child(2) {
+      height: 66vh;
+      position: inherit;
+    }
+    .Home > div > h1.name {
+      margin-bottom: 2vh;
+      color: var(--secondary);
       font-family: var(--main-font);
-      font-size: 9vw;
+      font-size: 12vw;
+      font-style: normal;
+      font-weight: bold;
+      line-height: var(--lh-a);
+      letter-spacing: 0.5vw;
+    }
+    .Home > div > h1 > span {
+      display: block;
+    }
+    .Home div > h1 > span > span.alt {
+      color: var(--primary-dark);
+    }
+    .Home > div > h2.title {
+      /* margin-bottom: 10vh; */
+      color: var(--primary-dark);
+      font-family: var(--main-font);
+      font-size: 6vw;
       font-style: normal;
       font-weight: normal;
       line-height: var(--lh-a);
-      letter-spacing: 0.75vw;
     }
-    .Home div p:nth-of-type(2n).paragraph  {
+    .Home > div:nth-child(2) {
+      overflow-x: hidden;
+    }
+    .Home > div:nth-child(2) > h3.scroll-effect [data-scroll]:not(.is-inview) {
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-size: 6vw;
+      margin: 2vw 0;
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, -2537, 0, 1);
+    }
+    .Home > div:nth-child(2) > h3.scroll-effect.is-inview {
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-size: 6vw;
+      margin: 2vw 0;
+      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 500, 0, 0, 1);
+      /* transition: transform; */
+    }
+    .Home > div > p {
+      padding-bottom: 7.5vh;
+      color: var(--accent-a);
+      font-family: var(--main-font);
+      font-size: 6vw;
+      font-style: normal;
+      font-weight: normal;
+      line-height: var(--lh-a);
+      letter-spacing: 0.25vw;
+    }
+    .Home > div p:nth-of-type().paragraph  {
       padding: 0 0 7.5vh;
       text-align: right;
     }
@@ -390,16 +452,12 @@ html.has-scroll-dragging {
       line-height: var(--lh-a);
       letter-spacing: 0.04em;
       padding-bottom: 7.5vh;
-      /* margin: auto auto 7vw; */
     }
     .About p:nth-of-type(2n).paragraph  {
       padding: 0 0 7.5vh;
       text-align: right;
     }
 
-    /* .Projects {
-      padding-top: 6vh;
-    } */
     .Projects .tab-list {
       padding-left: 0;
       width: 100%;
@@ -419,115 +477,150 @@ html.has-scroll-dragging {
       color: var(--primary);
       border-radius: 1vw;
     }
-    .Projects .dev-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      background-color: var(--primary-dark);
-      padding: 8vh 8vw;
-      margin: 0 0 6vh;
-      border-radius: 1vw;
-      transition: all 0.4s ease-in-out;
-      width: 100%;
-      height: 30vh;
+    .Projects div.project-item {
+      padding: 5vh 2vw;
     }
-    .Projects .dev-card:hover {
-      transform: scale(1.02);
+    .Projects div.project-item > div:first-child {
+      padding: 1vh 0 0;
     }
-    .Projects .dev-card > div:first-child h4 {
-      color: var(--secondary);
-      font-size: 4vw;
-      font-family: var(--main-font);
-      font-weight: normal;
-      font-style: bold;
-      letter-spacing: 0.5vw;
-      padding: 1vw 0;
-      margin: 0;
-    }
-    .Projects .dev-card > div:first-child span {
+    .Projects div.project-item > div:first-child h1 {
       color: var(--accent-a);
-      font-size: 2.5vw;
-      font-family: var(--sub-font);
-      font-weight: normal;
-      font-style: normal;
-      padding: 1vh 0;
-      text-transform: uppercase;
-    }
-    .Projects .dev-card > ul {
-      padding: 0;
-      margin: 0;
-    }
-    .Projects .dev-card > ul li {
-      padding: 1.5vh 3vw;
-      color: var(--secondary);
-      display: inline-block;
-    }
-    .Projects .dev-card > ul li.project-page-list {
-      border-radius: 1vw;
-      margin-left: auto;
-    }
-    .Projects .dev-card > ul li a {
-      padding: 0 3vw 0 0;
       font-family: var(--main-font);
+      font-size: 10vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+    }
+    .Projects div.project-item > div:first-child h1 a, .Projects div.project-item > div:first-child h1 a:visited {
+      text-decoration: none;
+      color: currentColor;
+    }
+    .Projects div.project-item > div.project-item-body {
+      display: none;
+      padding: 0.5vh 0 0.5vh 5vw;
+    }
+    .Projects div.project-item.is-inview > div.project-item-body {
+      display: block;
+    }
+    .Projects div.project-item > div.project-item-body > div {
+      padding: 0;
+    }
+    .Projects div.project-item > div.project-item-body > div:first-child {
+      margin-bottom: 1vh;
+    }
+    /* .Projects div.project-item > div.project-item-body > div:last-child {} */
+    .Projects div.project-item > div.project-item-body > div:first-child p {
+      padding: 1vh 0;
+      color: var(--accent-a);
+      font-family: var(--sub-font);
+      font-size: 5vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      letter-spacing: 0.08rem;
+    }
+    .Projects div.project-item > div.project-item-body > div:last-child span {
+      padding: 1vh 2.5vw 1vh 0;
+      color: var(--accent-b);
+      font-family: var(--sub-font);
+      font-size: 3vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      letter-spacing: 0.08rem;
+    }
+    .Projects div.project-item > div.project-item-body > div:last-child a {
+      padding: 1vh 0 1vh 2.5vw;
+      color: var(--secondary);
+      font-family: var(--main-font);
+      font-size: 3vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      letter-spacing: 0.08rem;
+      text-decoration: none;
+    }
+    .Projects div.project-item > div.project-item-body > div:last-child a:visited {
+      color: currentColor;
+    }
+
+    .Case-study .header {
+      margin: 2vh 0 4vh;
+      padding-left: 4vw;
+      border-left: 1.5vw solid var(--secondary);
+    }
+    .Case-study .header > div {
+      margin: 0 0 2vh;
+    }
+    .Case-study .header > div > h4 {
+      color: var(--secondary);
+      font-family: var(--main-font);
+      font-size: 4.5vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      margin-bottom: 1vh;
+      padding-left: 0;
+    }
+    .Case-study .header > div span.minor-subheading {
+      padding-bottom: 1vw;
+      color: var(--accent-a);
+      font-family: var(--sub-font);
+      font-size: 3vw;
+      line-height: var(--lh-a);
       font-weight: normal;
       font-style: normal;
       display: inline-block;
-      width: 100%;
-      height: 100%;
     }
-    .Projects .dev-card > ul li.project-page-list:hover {
-      background-color: var(--accent-c);
-      /* color: var(--secondary); */
+    .Case-study .body {
+      padding: 6vh 0vw;
     }
-    .Projects .dev-card > div:last-of-type p {
-      color:var(--secondary);
-      font-size: 3.8vw;
+    .Case-study .body > div.case-study-section {
+      margin-bottom: 13vh;
+    }
+    .Case-study .body > div.case-study-section:last-of-type {
+      margin-bottom: 1vh;
+    }
+    .Case-study .body > div.case-study-section h3 {
+      color: var(--secondary);
+      font-family: var(--main-font);
+      font-size: 6.5vw;
       line-height: var(--lh-a);
-      font-family: var(--sub-font);
-      font-weight: lighter;
+      font-weight: bold;
       font-style: normal;
-      letter-spacing: 0.25vw;
-      padding: 3vh 0;
+      padding: 0 0 3.5vh;
+    }
+    .Case-study .body > div.case-study-section p {
+      color: var(--secondary);
+      font-family: var(--sub-font);
+      font-size: 4.5vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      padding: 5vh 0 0;
     }
     
     .Contact {
       display: flex;
       flex-flow: column;
     }
-    .Contact p.paragraph {
-      color: var(--accent-a);
+    .Contact > div > p.paragraph {
+      color: var(--secondary);
       font-family: var(--main-font);
-      font-size: 8vw;
+      font-size: 6vw;
       font-style: normal;
-      font-weight: 700;
+      font-weight: normal;
       line-height: var(--lh-a);
       letter-spacing: 0.04em;
-      padding: 5vw 5vw 5vw 0;
+      padding: 5vh 0 5vh 0;
       margin: 0 auto 0;
     }
     .Contact > div:first-child {
-      margin: 0 0 8vh;
-    }
-    .Contact > div:first-child ul.social-contact {
-      margin: 0 !important;
-      padding: 0 !important;
-      display: flex !important;
-      flex-flow: row wrap !important;
-    }
-    .Contact > div:first-child div.social-contact li {
-      flex: 1 0 20% !important;
-    }
-    .Contact > div:first-child div:last-child {
-      height: 30vh;
-      width: 100%;
-    }
-    .Contact > div:first-child div:last-child img.contact-image {
-      width: 100%;
-      height: 100%;
+      margin: 0 0 4vh;
     }
     .Contact > div:last-child form {
       box-sizing: border-box;
-      padding: 3vw;
+      padding: 3vh 3vw;
       display: block;
     }
     .Contact > div:last-child form label {
@@ -535,16 +628,16 @@ html.has-scroll-dragging {
       font-family: var(--sub-font);
       font-style: normal;
       font-weight: normal;
-      font-size: 3.5vw;
+      font-size: 3vw;
       line-height: var(--lh-a);
       letter-spacing: 0.5vw;
-      color: #f7f7f7;
-      margin-bottom: 1.25vw;
+      color: var(--secondary);
+      margin-bottom: 1.25vh;
     }
     .Contact > div:last-child form input, .Contact > div:last-child form select, .Contact > div:last-child form textarea {
-      padding: 1rem;
-      background-color: var(--secondary);
-      color: var(--primary);
+      padding: 2.5vh 4.5vw;
+      background-color: var(--accent-d);
+      color: var(--secondary);
       border: none;
       font-family: var(--main-font);
       font-style: normal;
@@ -553,9 +646,12 @@ html.has-scroll-dragging {
       line-height: var(--lh-a);
       letter-spacing: 0.5vw;
       display: block;
-      margin: 0 0 3vw;
+      margin: 0 0 8vw;
       width: 100%;
       box-sizing: border-box;
+    }
+    .Contact > div:last-child form textarea {
+      height: 35vh;
     }
     .Contact > div:last-child form input:focus, .Contact > div:last-child form select:active, .Contact > div:last-child form textarea:active {
       background-color: transparent;
@@ -563,8 +659,9 @@ html.has-scroll-dragging {
       outline: none;
     }
     .Contact > div:last-child form input:valid, .Contact > div:last-child form select:valid, .Contact > div:last-child form textarea:valid {
-      background-color: var(--primary-dark);
+      background-color: var(--accent-d);
       color: var(--secondary);
+      border-left: 2px solid var(--secondary);
     }
     .Contact > div:last-child form input:user-invalid, .Contact > div:last-child form select:user-invalid, .Contact > div:last-child form textarea:user-invalid {
       /* border: 1.5px wavy red; */
@@ -578,7 +675,38 @@ html.has-scroll-dragging {
     .Contact ul li.social-icon:hover {
       color: var(--secondary);
     }
-    
+    .Contact > div:nth-child(2) > div.socials {
+      display: grid;
+      gap: 2vw;
+      grid-template-columns: auto auto auto auto;
+      margin-top: 18vw;
+    }
+    .Contact > div:nth-child(2) > div.socials > div.contact-social-list {
+      margin: 4vw auto;
+    }
+    .Contact > div:nth-child(2) > div.socials > div.contact-social-list > a .social-icon {
+      color: var(--accent-a);
+    }
+    .Contact > div:nth-child(2) > div.contact-email {
+      border-top: 2px solid var(--accent-d);
+      margin: 10vw 0 4vw;
+      padding: 10vw 0;
+    }
+    .Contact > div:nth-child(2) > div.contact-email span {
+      padding: 2vw 0 0;
+      color: var(--accent-c);
+      font-size: 3.5vw;
+    }
+    .Contact > div:nth-child(2) > div.contact-email h3 {
+      font-size: 6vw;
+      padding: 4vw 0 0;
+      color: var(--secondary);
+    }
+    .Contact > div:nth-child(2) > div.contact-email h3 a:visited {
+      color: var(--secondary);
+    }
+  
+
     .Shop {
       display: flex;
       justify-content: center;
@@ -598,10 +726,10 @@ html.has-scroll-dragging {
     .Misc > div:first-child {
       margin: 0 0 10vw;
     }
-    .Misc p.paragraph {
-      color: var(--accent-a);
+    .Misc > div:first-child > p.paragraph {
+      color: var(--secondary);
       font-family: var(--main-font);
-      font-size: 8vw;
+      font-size: 6vw;
       font-style: normal;
       font-weight: 700;
       line-height: var(--lh-a);
@@ -609,61 +737,93 @@ html.has-scroll-dragging {
       padding: 5vw 5vw 5vw 0;
       margin: 0;
     }
-    .Misc > div:last-child {
+    .Misc > div:first-child > p.paragraph > span {
+      color: var(--accent-a);
+    }
+    .Misc div.misc-item {
+      padding: 5vh 2vw;
+    }
+    .Misc div.misc-item > div:first-child {
+      padding: 1vh 0 0;
+    }
+    .Misc div.misc-item > div:first-child h1 {
+      color: var(--secondary);
+      font-family: var(--main-font);
+      font-size: 6vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+    }
+    .Misc div.misc-item > div:first-child h1 a, .Misc div.misc-item > div:first-child h1 a:visited {
+      text-decoration: none;
+      color: currentColor;
+    }
+    .Misc div.misc-item > div:last-child {
+      /* display: none; */
+      width: 75vw;
+      padding: 0.5vh 0 0.5vh 0;
+      margin-left: auto;
+      text-align: right;
+    }
+    /* .Misc div.misc-item > div:last-child.is-inview {
+      display: block;
+      transition: display 0.75s ease-out;
+    } */
+    .Misc div.misc-item > div:last-child p {
+      padding: 1vh 0;
+      color: var(--accent-a);
+      font-family: var(--sub-font);
+      font-size: 4vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      letter-spacing: 0.08rem;
+    }
+    .misc-section-item {
+      padding: 2vh 2vw;
+      margin-bottom: 2.5vh;
       display: flex;
       flex-flow: column nowrap;
     }
-    .Misc > div:last-child > div.tab {
-      position: relative;
-      height: 30vh;
-      width: 100%;
-      background-color: var(--primary-dark);
+    .misc-section-item > div {
+      width: auto;
+      padding: 1vh 0.5vw;
+    }
+    .misc-section-item > div:first-child {
+      justify-self: flex-start;
+    }
+    .misc-section-item > div:first-child h1 {
       color: var(--secondary);
-      margin: 0 auto 5vh;
-      padding: 1.5rem;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
+      font-family: var(--main-font);
+      font-size: 7vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+    }
+    .misc-section-item > div:first-child h1 a, .misc-item > div:first-child h1 a:visited {
+      text-decoration: none;
+      color: currentColor;
+    }
+    .misc-section-item > div:last-child {
+      width: fit-content;
+      margin-left: auto;
+    }
+    .misc-section-item > div:last-child span {
+      color: var(--accent-a);
       font-family: var(--sub-font);
-      transition: all 0.4s ease-in-out;
+      font-size: 3vw;
+      line-height: var(--lh-a);
+      font-weight: normal;
+      font-style: normal;
+      text-align: right;
+      text-transform: uppercase;
+    }
+    .misc-section-item > div:last-child > span:first-child {
+      color: var(--accent-b);
+      font-size: 4.5vw;
+      text-transform: capitalize;
     }
     
-    .Misc > div:last-child > div a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      background-image: none;
-      text-decoration: none;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
-      box-sizing: border-box;
-      padding: 4vw 6vw;
-    }
-    .Misc > div:last-child > div > a h3 {
-      margin-top: 0;
-      color: var(--secondary);
-      margin-bottom: 8vw;
-    }
-    .Misc > div:last-child > div > a p {
-      color: var(--accent-a);
-      font-size: 3.5vw;
-      text-align: center;
-      line-height: var(--lh-a);
-    }
-    .Misc > div:last-child > div.tab:hover  {
-      background-color: var(--accent-c);
-      color: var(--primary-dark);
-      transform: scaleY(1.05);
-    }
-    .Misc > div:last-child > div.tab:hover > a p, .Misc > div:last-child > div.tab:hover > a h3 {
-      color: var(--secondary);
-    }
     .misc-header {
       display: flex;
       align-items: center;
@@ -687,7 +847,7 @@ html.has-scroll-dragging {
       left: 0;
       text-decoration: none;
     }
-    .Playlist > div, .Readlist > div {
+    /* .Playlist > div, .Readlist > div {
       padding: 0 3rem 3rem;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -746,13 +906,13 @@ html.has-scroll-dragging {
       width: 67%;
       justify-content: space-evenly;
       align-items: center;
-    }
+    } */
     
     .Error div {
       text-align: center;
     }
-    .Error img {
-    }
+    /* .Error img {
+    } */
     .Error h1 {
       font-size: 15vw;
       color: var(--secondary);

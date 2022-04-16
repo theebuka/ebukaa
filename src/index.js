@@ -4,6 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+export { default as Home } from './pages/home.js';
+export { default as About } from './pages/about.js';
+export { default as Projects } from './pages/projects.js';
+export { default as Contact } from './pages/contact.js';
+export { default as Shop } from './pages/shop.js';
+export { default as Space } from './pages/space.js';
+export { default as Error } from './pages/error.js';
+export { default as LoadingScreen } from './pages/loading.js';
+export { default as Playlist } from './pages/playlist.js';
+export { default as Readlist } from './pages/readlist.js';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

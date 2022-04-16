@@ -7,6 +7,7 @@ import ProfileImg from './../images/img-15.jpg';
 
 class About extends Component {
     componentDidMount() {
+        // eslint-disable-next-line
         const scroll = new LocomotiveScroll({
             el: document.querySelector(".About"),
             smooth: true
@@ -16,7 +17,7 @@ class About extends Component {
         return (
             <section className="About" data-scroll-section>
                 <p className="paragraph" data-scroll data-scroll-speed="1" data-section="1">
-                    Hi. I'm <span className="bright">Ebuka, frontend developer, designer &amp; technical writer</span> based in Lagos.
+                    <span className="bright">Ebuka</span>. <span className="bright">Frontend developer, product designer &amp; writer</span> based in Lagos.
                 </p>
                 <div className="photo-wrapper" data-section="3">
                     <div className="photo-container" data-scroll data-scroll-speed="1" >

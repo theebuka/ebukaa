@@ -1,37 +1,32 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LocomotiveScroll from 'locomotive-scroll';
+// import { Link } from 'react-router-dom';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CTA from "../components/cta.js";
-import SocialItem from './../components/socialitem.js';
-import SmilingPhoto from './../images/img-4.png';
+import { SocialItemBlock } from './../components/socialitem.js';
+// import SmilingPhoto from './../images/img-4.png';
 
 class Contact extends Component {
+    componentDidMount() {
+        // eslint-disable-next-line
+        const scroll = new LocomotiveScroll({
+          el: document.querySelector(".Contact"),
+          smooth: true
+        });
+    }
+
     render() {
         return (
             <section className="Contact">
                 <div>
-                    <p className="paragraph">
-                        Hey! I'd <span className="bright">love to hear from you</span>. Send me a message or connect with me via <span className="bright">my socials</span>.
+                    <p className="paragraph" data-scroll>
+                        Hey! I'd love to hear from you. Send me a message using the form or connect with me via my socials.
                     </p>
-                    <ul className="social-contact">
-                        <SocialItem path="https://facebook.com/ebuka.nwaju/" iconName={['fab','facebook-f']} /> {/* facebook */}
-                        <SocialItem path="https://twitter.com/savage_anatii" iconName={['fab','twitter']} /> {/* twitter */}
-                        <SocialItem path="https://instagram.com/rin.ze/" iconName={['fab','instagram']} /> {/* instagram */}
-                        <SocialItem path="https://github.com/theebuka" iconName={['fab','github-alt']} /> {/* github */}
-                        <SocialItem path="https://dribbble.com/Ebukaa" iconName={['fab','dribbble']} /> {/* dribbble */}
-                        <SocialItem path="https://medium.com/@ebuka.nwaju" iconName={['fab','medium-m']} /> {/* medium */}
-                        <SocialItem path="https://unsplash.com/@anatii" iconName={['fab','unsplash']} /> {/* unsplash */}
-                        <SocialItem path="mailto:ebuka.nwaju@yahoo.com" iconName={['fas','envelope']} /> {/* email */}
-                        <SocialItem path="https://linkedin.com/" iconName={['fab','linkedin-in']} /> {/* linkedin */}
-                    </ul>
-                    <div>
-                        <img src={SmilingPhoto} className="contact-image" alt="ebuka nwaju smiling in contact section"></img>
-                    </div>
                 </div>
                 <div>
-                    <form action="https://www.formingo.co/submit/ebuka.nwaju@yahoo.com" method="POST">
+                    <form action="https://www.formingo.co/submit/ebuka.nwaju@yahoo.com" method="POST" data-scroll>
                         <label for="name">Name</label>
-                        <input type="text" name="name" placeholder="Lexie Webwoman" required></input>
+                        <input type="text" name="name" placeholder="Gazorp gazorp" required></input>
 
                         <label for="location">Location</label>
                         <input type="text" name="location" placeholder="Alien Colony 1, Mars" required></input>
@@ -54,10 +49,20 @@ class Contact extends Component {
 
                         <CTA className="primary" type="submit" label="Shoot" text="Shoot" />
                     </form>
-                    <div>
-                        <img src={SmilingPhoto} className="contact-image" alt="ebuka nwaju smiling"></img>
+                    <div className='socials' data-scroll>
+                        <SocialItemBlock path="https://facebook.com/ebuka.nwaju/" iconName={['fab','facebook-f']} /> {/* facebook */}
+                        <SocialItemBlock path="https://twitter.com/savage_anatii" iconName={['fab','twitter']} /> {/* twitter */}
+                        <SocialItemBlock path="https://instagram.com/rin.ze/" iconName={['fab','instagram']} /> {/* instagram */}
+                        <SocialItemBlock path="https://github.com/theebuka" iconName={['fab','github-alt']} /> {/* github */}
+                        <SocialItemBlock path="https://dribbble.com/Ebukaa" iconName={['fab','dribbble']} /> {/* dribbble */}
+                        <SocialItemBlock path="https://medium.com/@ebuka.nwaju" iconName={['fab','medium-m']} /> {/* medium */}
+                        <SocialItemBlock path="https://unsplash.com/@anatii" iconName={['fab','unsplash']} /> {/* unsplash */}
+                        <SocialItemBlock path="https://linkedin.com/" iconName={['fab','linkedin-in']} /> {/* linkedin */}
                     </div>
-                    <Link to="/shop" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                    <div className='contact-email'>
+                        <span data-scroll>Need to send a mail?</span>
+                        <h3 data-scroll><a href="mailto:me@theebuka.com">me@theebuka.com</a></h3>
+                    </div>
                 </div>
             </section>
         )

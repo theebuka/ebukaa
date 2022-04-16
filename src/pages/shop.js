@@ -9,7 +9,7 @@ class Shop extends Component {
                 <div>
                     <span className="bright">Coming Soon</span>
                     <Link to="/" className="primary">Back to Home</Link>
-                    <Link to="/misc" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                    <Link to="/space" className="tertiary">Space <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
                 </div>
             </section>
         )

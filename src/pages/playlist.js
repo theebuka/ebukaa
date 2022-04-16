@@ -1,23 +1,24 @@
 import React, {Component} from 'react';
-import MiscSectionHeader from './../components/misc-section-header.js';
-import {singles, albums} from './../data/playlist-data.js';
-import {pItem} from '../components/item.js';
+// import MiscSectionHeader from './../components/misc-section-header.js';
+import {singles} from './../data/playlist-data.js';
+import MiscItem from './../components/misc-items.js';
+import LocomotiveScroll from 'locomotive-scroll';
 
 class Playlist extends Component {
+    componentDidMount() {
+        // eslint-disable-next-line
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector(".Playlist"),
+            smooth: true
+        })
+    }
     render() {
         return (
-            <section className="Playlist">
-                <MiscSectionHeader headerText="Playlist" />
+            <section className="Playlist" data-scroll-section>
                 <h3>Singles</h3>
                 <div>
                     {singles.map(function(single) {
-                        return <pItem key={singles} track={single.track} artiste={single.artiste} year={single.year} genre={single.genre} rating={single.rating} />
-                    })}
-                </div>
-                <h3>Albums</h3>
-                <div>
-                    {albums.map(function(album) {
-                        return <pItem key={albums} track={album.track} artiste={album.artiste} year={album.year} genre={album.genre} rating={album.rating} />
+                        return <MiscItem key={singles} title={single.title} link={single.link} label={single.creator} genre={single.genre} year={single.year} />
                     })}
                 </div>
             </section>

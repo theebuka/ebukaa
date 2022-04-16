@@ -13,15 +13,14 @@ const MobileNavigation = () => {
         };
         return (
             <nav className="mobile-nav">
-                <button onClick={handleToggle}>{navbarOpen ? (<FontAwesomeIcon icon={['fas','cancel']} className="menu-icon"/>) : (<FontAwesomeIcon icon={['fas','bars']} className="menu-icon"/>)}</button>
+                <button onClick={handleToggle}>{navbarOpen ? (<FontAwesomeIcon icon={['fas','times']} className="menu-icon"/>) : (<FontAwesomeIcon icon={['fas','bars']} className="menu-icon"/>)}</button>
                 <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-                    <button onClick={handleToggle}><FontAwesomeIcon icon={['fas','close']} className="menu-icon"/></button>
                     <Navitem path="/" label="Home" func={closeMenu} />
-                    <Navitem path="/about" label="About"  func={closeMenu} />
+                    {/* <Navitem path="/about" label="About"  func={closeMenu} /> */}
                     <Navitem path="/projects" label="Projects" func={closeMenu} />
-                    <Navitem path="/contact" label="Contact" func={closeMenu} />
                     <Navitem path="/shop" label="Shop" func={closeMenu} />
-                    <Navitem path="/misc" label="Misc" func={closeMenu} />
+                    <Navitem path="/space" label="Space" func={closeMenu} />
+                    <Navitem path="/contact" label="Contact Me" func={closeMenu} />
                 </ul>
             </nav>
         )

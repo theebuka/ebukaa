@@ -2,60 +2,45 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import LocomotiveScroll from 'locomotive-scroll';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Badge from './../components/badge.js';
 
 class Home extends Component {
-    /* constructor(props) {
-        super(props)
-      this.backgrounds = [HomeImage1, HomeImage7]
-      this.state = { backgroundIndex: 0 }
-      
-      this.changeBackground = this.changeBackground.bind(this)
-    }
-  
-    componentDidMount () {
-      this.timeout = setTimeout(
-        this.changeBackground,
-        this.props.animDuration * 1000
-      )
-
-      
-    }
     
-    componentWillUnmount() {
-        if (this.timeout) clearTimeout(this.timeout)
-    }
-  
-    changeBackground () {
-      this.setState(function ({ backgroundIndex }) {
-        const nextBackgroundIndex = ++backgroundIndex % this.backgrounds.length
-  
-        return { backgroundIndex: nextBackgroundIndex }
-      }, function () {
-        this.timeout = setTimeout(
-          this.changeBackground,
-          this.props.animDuration * 1000
-        )
-      })
-    };
- */
-    /* componentDidMount() {
+    componentDidMount() {
+      // eslint-disable-next-line
       const scroll = new LocomotiveScroll({
         el: document.querySelector(".Home"),
         smooth: true
       });
-    } */
-    // this.backgrounds[this.state.backgroundIndex]
-   
+    }
 
     render() {
       return (
         <section className="Home" data-scroll-section>
+          {/* <div>
+            <p className="paragraph" data-scroll>I'm <span className="bright">Chukwuebuka Nwaju</span>, a <span className="bright">Developer</span> and <span className="bright">Product Designer</span> based in <span className="bright">Lagos</span>.</p>
+            <Badge />
+            <Link to="/projects" className="primary">Browse Projects</Link>
+            <Link to="/about" className="tertiary">About <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+          </div> */}
           <div>
-          <p className="paragraph" data-scroll><span className="bright">Hello</span>.</p>
-          <p className="paragraph" data-scroll>I'm <span className="bright">Ebuka Nwaju</span>, a <span className="bright">Developer</span>, <span className="bright">Product Designer</span> and <span className="bright">Creative Writer</span> based in <span className="bright">Lagos</span>.</p>
-            {/* <CTA className="primary" type="button" label="Browse Projects" text="Browse Projects" /> */}
-          <Link to="/projects" className="primary">Browse Projects</Link>
-          <Link to="/about" className="tertiary">To next page <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+            <h1 className='name' data-scroll>
+              <span className=''>Chukwueb<span className="alt">x</span>ka</span> <span classNmae="">Nwaju.</span>
+            </h1>
+            <h2 className='title' data-scroll>Frontend developer. Product designer. Human.</h2>
+          </div>
+          <div>
+            {/* <Badge /> */}
+            <h3 className='scroll-effect' data-scroll data-scroll-direction="hrizontal" data-scroll-speed="-8" data-scroll-target="#direction"> Keep scrolling, almost there</h3>
+            <h3 className='scroll-effect' data-scroll data-scroll-direction="hrizontal" data-scroll-speed="-8" data-scroll-target="#direction"> Yep, you guessed it</h3>
+            <h3 className='scroll-effect' data-scroll data-scroll-direction="hrizontal" data-scroll-speed="-8" data-scroll-target="#direction"> These are just fillers lol</h3>
+          </div>
+          <div>
+            <p data-scroll>
+              I help <span className="">brands and startups</span> develop <span className="">fast, accessible & responsive websites</span>, design <span className="">aesthetic usable interfeaces</span> and write <span className="">compelling copy</span> to improve their online presence and brand recognition.
+            </p>
+            <Link to="/projects" className="primary" data-scroll>Download Resume</Link>
+            <Link to="/projects" className="tertiary" data-scroll>Projects <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
           </div>
         </section>
       )

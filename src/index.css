@@ -1,11 +1,14 @@
 :root{
   /* --vh: 6.4px; */
-  --primary : #1d1d21;
+  /* --primary : #1d1d21; */
+  --primary: #ffffff;
   --primary-dark: #0c0c1040;
-  --secondary: #ffffff;
+  /* --secondary: #ffffff; */
+  --secondary : #1d1d21;
   --accent-a: #616164;
   --accent-b: #f64b29;
   --accent-c: #5a5a5a;
+  --accent-d: #f0f0f0;
   --lh-a: 1.6;
   --main-font: 'Alliance No.2';
   --sub-font: 'Open Sans';
