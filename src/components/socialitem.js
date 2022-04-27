@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
+// import {Facebook, Instagram, Twitter} from 'react-feather'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class SocialItem extends Component {
+/* class SocialItem extends Component {
     render() {
         return (
             <li className="social-list-item">
@@ -11,7 +12,7 @@ class SocialItem extends Component {
             </li>
         )
     }
-}
+} */
 
 class SocialItemBlock extends Component {
     render() {
@@ -25,4 +26,4 @@ class SocialItemBlock extends Component {
     }
 };
 
-export {SocialItem, SocialItemBlock};
+export {SocialItemBlock};

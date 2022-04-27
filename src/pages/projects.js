@@ -19,22 +19,22 @@ class Projects extends Component {
         return(
             <section className="Projects">
                 <div>
-                    <Tabs data-scroll>
-                        <div label="Development">
+                    <Tabs>
+                        <ul className='project-item' label="Development">
                             {dev.map(function (item) {
-                                return <Project key={dev.id} title={item.title} summary={item.summary} stack={item.stack} link={item.link} path={item.path} iconName={item.icon} data-scroll />
+                                return <Project key={dev} title={item.title} summary={item.summary} link={item.link} number={item.number} data-scroll />
                             })}
-                        </div>
-                        <div label="Design">
+                        </ul>
+                        <ul className='project-item' label="Design">
                             {design.map(function (item) {
-                                return <Project key={design} title={item.title} summary={item.summary} stack={item.stack} link={item.link} path={item.path} iconName={item.icon} />
+                                return <Project key={design} title={item.title} summary={item.summary} link={item.link} number={item.number} data-scroll />
                             })}
-                        </div>
-                        <div label="Writing">
+                        </ul>
+                        <ul className='project-item' label="Writing">
                             {writing.map(function (item) {
-                                return <Project key={writing} title={item.title} summary={item.summary} stack={item.stack} link={item.link} path={item.path} iconName={item.icon} />
+                                return <Project key={writing} title={item.title} summary={item.summary} link={item.link} number={item.number} data-scroll />
                             })}
-                        </div>
+                        </ul>
                     </Tabs>
                     <Link to="/shop" className="tertiary" data-scroll>Shop <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
                 </div>

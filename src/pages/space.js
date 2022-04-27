@@ -64,9 +64,9 @@ class Space extends Component {
 
         return(
             <section className="Misc" data-scroll-section>
-                <div data-scroll-container>
+                <div>
                     <p className="paragraph" data-scroll>
-                        This is a curated section of my favorite stuff. JSYK, I have excellent taste <span className="">*chef's kiss*</span>, so don't fret.
+                        Welcome to my Space, where i curate some of my favorite stuff. JSYK, I have excellent taste <span className="">*chef's kiss*</span>, so don't fret. Feel free to look around.
                     </p>
                 </div>
                 <div data-scroll-container>

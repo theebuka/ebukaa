@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import {ArrowUpRight} from 'react-feather'
 
 class Navitem extends Component {
     render() {
         return (
-            <li className="">
-                <NavLink to={this.props.path} onClick={this.props.func} exact>{this.props.label}</NavLink>
+            <li className="navigation-item">
+                <NavLink to={this.props.path} onClick={this.props.func} exact>{this.props.label} <ArrowUpRight size={16} /></NavLink>
             </li>
         )
     }

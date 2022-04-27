@@ -23,33 +23,37 @@ let dev = [
         title: "Vix",
         link: "/",
         summary: "CSS styling library with utility classes for rapid prototyping",
-        stack: "CSS, SCSS",
-        path: "/",
-        icon: "['fas', 'arrow-right']"
+        number: "01"
     },
     {
         title: "Smirky",
         link: "/",
         summary: "Caption generator for contemporary creators",
-        stack: "HTML, CSS, JS",
-        path: "/",
-        icon: "['fab', 'github']"
+        number: "02"
     },
     {
         title: "Nyx",
         link: "/",
         summary: "Chatbot for the web",
-        stack: "HTML, CSS, JS",
-        path: "/",
-        icon: "['fab', 'github']"
+        number: "03"
     },
     {
         title: "Opal",
         link: "/",
         summary: "Offline quiz app for the web",
-        stack: "HTML, CSS, JS",
-        path: "/",
-        icon: "{['fab', 'github']}"
+        number: "04"
+    },
+    {
+        title: "Ruby",
+        link: "/",
+        summary: "Offline quiz app for the web",
+        number: "05"
+    },
+    {
+        title: "Sapphire",
+        link: "/",
+        summary: "Offline quiz app for the web",
+        number: "06"
     },
 ]
 
@@ -58,25 +62,19 @@ let design = [
         title: "Black Ivy Hairs",
         link: "/projects/blackivy",
         summary: "CSS styling library with utility classes for rapid prototyping",
-        stack: "Adove Illustrator",
-        path: "/",
-        icon: "['fab', 'github']"
+        number: "01"
     },
     {
         title: "Vix",
         link: "/",
         summary: "CSS styling library with utility classes for rapid prototyping",
-        stack: "CSS, SCSS",
-        path: "/",
-        icon: "['fab', 'github']"
+        number: "02"
     },
     {
         title: "",
         link: "",
         summary: "",
-        stack: "",
-        path: "",
-        icon: ""
+        number: "03"
     },
 ]
 
