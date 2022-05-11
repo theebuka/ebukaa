@@ -19,7 +19,7 @@ class SocialItemBlock extends Component {
         return (
             <div className="contact-social-list">
                 <a href={this.props.path} target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={this.props.iconName} size="lg" className="social-icon"/>
+                    <FontAwesomeIcon icon={this.props.iconName} size="1x" className="social-icon"/>
                 </a>
             </div>
         )

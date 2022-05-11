@@ -15,25 +15,41 @@ class CaseStudy extends Component {
         return (
             <section className="Case-study" data-scroll-section>
                 <div className="header" data-scroll-container>
-                    <div data-scroll>
-                        <span className='minor-subheading'>Projbnect Name</span>
-                        <h2 data-scroll>{this.props.title}</h2>
+                    <div>
+                        <div data-scroll>
+                            <span className='minor-subheading'>Project Title</span>
+                            <h2 data-scroll>{this.props.title}</h2>
+                        </div>
+                        <div data-scroll>
+                            <span className='minor-subheading'>Subtitle</span>
+                            <h3 data-scroll>{this.props.subtitle}</h3>
+                        </div>
                     </div>
-                    <div data-scroll>
-                        <span className='minor-subheading'>Role</span>
-                        <h4 data-scroll>{this.props.role}</h4>
+                    <div>
+                        <div data-scroll>
+                            <span className='minor-subheading'>Role</span>
+                            <h4 data-scroll>{this.props.role}</h4>
+                        </div>
+                        <div data-scroll>
+                            <span className='minor-subheading'>Type</span>
+                            <h4 data-scroll>{this.props.type}</h4>
+                        </div>
                     </div>
-                    <div data-scroll>
-                        <span className='minor-subheading'>Type</span>
-                        <h4 data-scroll>{this.props.type}</h4>
+                    <div>
+                        <div data-scroll>
+                            <span className='minor-subheading'>Niche</span>
+                            <h4 data-scroll>{this.props.niche}</h4>
+                        </div>
+                        <div data-scroll>
+                            <span className='minor-subheading'>Timeframe</span>
+                            <h4 data-scroll>{this.props.timeframe}</h4>
+                        </div>
                     </div>
-                    <div data-scroll>
-                        <span className='minor-subheading'>Niche</span>
-                        <h4 data-scroll>{this.props.niche}</h4>
-                    </div>
-                    <div data-scroll>
-                        <span className='minor-subheading'>Timeframe</span>
-                        <h4 data-scroll>{this.props.timeframe}</h4>
+                    <div>
+                        <div>
+                            <span className='minor-subheading'>Project Summary</span>
+                            <p data-scroll>{this.props.summary}</p>
+                        </div>
                     </div>
                 </div>
                 <div className="body" data-scroll-container>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Logo from './logo.js';
 import Navitem from './navitem.js';
-import {Menu, X} from 'react-feather'
+import {X} from 'react-feather'
+import Menu from './../images/hamburgermenu.svg';
 
 const Topbar = () =>  {
     const [navbarOpen, setNavbarOpen] = useState(false);
@@ -16,7 +17,7 @@ const Topbar = () =>  {
             <div className="topbar">
                 <Logo />
                 <nav className="mobile-nav">
-                    <button onClick={handleToggle}>{navbarOpen ? (<X className="menu-icon"/>) : (<Menu className="menu-icon"/>)}</button>
+                    <button onClick={handleToggle}>{navbarOpen ? (<X className="menu-icon"/>) : (<img src={Menu} alt="double line hamburger menu" className="menu-icon" />)}</button>
                 </nav>
             </div>
             <div className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>

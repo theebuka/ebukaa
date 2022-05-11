@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import MiscTab from './../components/misc-tabs.js';
 import LocomotiveScroll from 'locomotive-scroll';
-import Miscellaneous from '../components/miscellaneous-tab.js';
+import SpaceMenuItem from '../components/space-menu-item.js';
 
 class Space extends Component {
     componentDidMount() {
         // eslint-disable-next-line
         const scroll = new LocomotiveScroll({
-            el: document.querySelector(".Misc"),
+            el: document.querySelector(".Space"),
             smooth: true
         })
     }
@@ -63,7 +63,7 @@ class Space extends Component {
         ]
 
         return(
-            <section className="Misc" data-scroll-section>
+            <section className="Space" data-scroll-section>
                 <div>
                     <p className="paragraph" data-scroll>
                         Welcome to my Space, where i curate some of my favorite stuff. JSYK, I have excellent taste <span className="">*chef's kiss*</span>, so don't fret. Feel free to look around.
@@ -71,10 +71,10 @@ class Space extends Component {
                 </div>
                 <div data-scroll-container>
                     {tabs.map(function(tab) {
-                        return <Miscellaneous key={tabs} link={tab.path} title={tab.heading} summary={tab.body} />
+                        return <SpaceMenuItem key={tabs} link={tab.path} title={tab.heading} summary={tab.body} />
                     })}
                 </div>
-                <Link to="/contact" className="tertiary">Contact Me <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                <Link to="/contact" className="tertiary in-page-nav">Contact Me <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
             </section>
         )
     }

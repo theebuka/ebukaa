@@ -25,7 +25,7 @@ class Projects extends Component {
                                 return <Project key={dev} title={item.title} summary={item.summary} link={item.link} number={item.number} data-scroll />
                             })}
                         </ul>
-                        <ul className='project-item' label="Design">
+                        <ul id="Design-projects" className='project-item' label="Design">
                             {design.map(function (item) {
                                 return <Project key={design} title={item.title} summary={item.summary} link={item.link} number={item.number} data-scroll />
                             })}

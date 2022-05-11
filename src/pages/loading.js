@@ -3,10 +3,14 @@ import React, {Component} from 'react';
 class LoadingScreen extends Component {
     render() {
         return(
-            <section class="Loading">
-                <div>
-                    <span>Ebuka Nwaju</span>
-                    <span>Take a chill pill</span>
+            <section className="preloader-wrapper absolute">
+                <div className="preloader-name">
+                    <div>
+                        <h1>CN.</h1>
+                    </div>
+                </div>
+                <div className="preloader-line">
+                    <div className='line'></div>
                 </div>
             </section>
         )

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import SocialItem from './socialitem';
 import LocomotiveScroll from 'locomotive-scroll';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Project extends Component {
     componentDidMount() {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-class MiscItem extends Component {
+class SpaceSectionItem extends Component {
     render() {
         return (
-            <div className="misc-section-item" data-scroll-container>
+            <div className="space-section-item" data-scroll-container>
                 <div data-scroll data-scroll-speed="5">
                     <h1>
                         <a href={this.props.link} rel="noopener noreferrer">{this.props.title}</a>
@@ -17,4 +17,4 @@ class MiscItem extends Component {
     }
 }
 
-export default MiscItem;
+export default SpaceSectionItem;

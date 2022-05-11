@@ -13,7 +13,7 @@ class BlackIvy extends Component {
     }
     render() {
         return (
-            <CaseStudy title="Black Ivy Hairs" role="Designer" niche="Fashion" timeframe="May 2021" type="Logo" next="/">
+            <CaseStudy title="Black Ivy Hairs" subtitle="Crafting a brand logo for a scaling retail hair brand in Enugu, Nigeria" role="Designer" niche="Fashion" timeframe="May 2021" type="Brand Identity" summary="Lorem ipsum dolor amit Lorem ipsum dolor amit Lorem ipsum dolor amit Lorem ipsum dolor" next="/">
 
                 <CaseStudySection
                     header="Product"
