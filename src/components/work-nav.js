@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Tab from './project-tab.js';
+import Tab from './work-tab.js';
 
-class Tabs extends Component {
+class WorkTabs extends Component {
   static propTypes = {
     children: PropTypes.instanceOf(Array).isRequired,
   }
@@ -57,4 +57,4 @@ class Tabs extends Component {
   }
 }
 
-export default Tabs;
+export default WorkTabs;

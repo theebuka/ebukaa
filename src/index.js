@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 export { default as Home } from './pages/home.js';
 export { default as About } from './pages/about.js';
-export { default as Projects } from './pages/projects.js';
+export { default as Work } from './pages/work.js';
 export { default as Contact } from './pages/contact.js';
 export { default as Shop } from './pages/shop.js';
 export { default as Space } from './pages/space.js';

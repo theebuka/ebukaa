@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoadingScreen from './pages/loading.js';
-import { Home, Projects, Contact, Shop, Space, Error } from './index.js';
+import { Home, Work, Contact, Shop, Space, Error } from './index.js';
 import { Playlist } from './index.js';
 import { BlackIvy } from './index.js';
 import Navigation from './components/desktop-nav.js';
@@ -49,9 +49,9 @@ function App() {
                 <Home />
               </Route>
 
-              <Route path="/projects" render={({ match: { url } }) => (
+              <Route path="/work" render={({ match: { url } }) => (
                 <div>
-                  <Route path={`${url}/`} component={Projects} exact />
+                  <Route path={`${url}/`} component={Work} exact />
                   <Route path={`${url}/blackivy`} component={BlackIvy} />
                 </div>
               )} />

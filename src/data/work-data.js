@@ -18,38 +18,44 @@ let writing = [
     {title: "Password Gen", body: "Password generator", stack: "HTML, CSS, JS", github: "", path: ""}
 ] */
 
-let dev = [
+const dev = [
     {
+        id: 1,
         title: "Vix",
         link: "/",
         summary: "CSS styling library with utility classes for rapid prototyping",
         number: "01"
     },
     {
+        id: 2,
         title: "Smirky",
         link: "/",
         summary: "Caption generator for contemporary creators",
         number: "02"
     },
     {
+        id: 3,
         title: "Nyx",
         link: "/",
         summary: "Chatbot for the web",
         number: "03"
     },
     {
+        id: 4,
         title: "Opal",
         link: "/",
         summary: "Offline quiz app for the web",
         number: "04"
     },
     {
+        id: 5,
         title: "Ruby",
         link: "/",
         summary: "Offline quiz app for the web",
         number: "05"
     },
     {
+        id: 6,
         title: "Sapphire",
         link: "/",
         summary: "Offline quiz app for the web",
@@ -57,52 +63,38 @@ let dev = [
     },
 ]
 
-let design = [
+const design = [
     {
+        id: 1,
         title: "Black Ivy Hairs",
-        link: "/projects/blackivy",
+        link: "/work/blackivy",
         summary: "CSS styling library with utility classes for rapid prototyping",
         number: "01"
     },
     {
+        id: 2,
         title: "Vix",
         link: "/",
         summary: "CSS styling library with utility classes for rapid prototyping",
         number: "02"
     },
-    {
-        title: "",
-        link: "",
-        summary: "",
-        number: "03"
-    },
 ]
 
-let writing = [
+const writing = [
     {
-        title: "Vix",
-        link: "/",
+        id: 1,
+        title: "Black Ivy Hairs",
+        link: "/work/blackivy",
         summary: "CSS styling library with utility classes for rapid prototyping",
-        stack: "CSS, SCSS",
-        path: "/",
-        icon: "['fab', 'github']"
+        number: "01"
     },
     {
-        title: "Vix",
-        link: "/",
+        id: 2,
+        title: "Black Ivy Hairs",
+        link: "/work/blackivy",
         summary: "CSS styling library with utility classes for rapid prototyping",
-        stack: "CSS, SCSS",
-        path: "/",
-        icon: "['fab', 'github']"
-    },
-    {
-        title: "",
-        link: "",
-        summary: "",
-        stack: "",
-        path: "",
-        icon: ""
-    },
+        number: "01"
+    }
 ]
 
 export {dev, design, writing};

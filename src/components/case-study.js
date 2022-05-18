@@ -55,24 +55,47 @@ class CaseStudy extends Component {
                 <div className="body" data-scroll-container>
                     {this.props.children}
                 </div>
-                <Link to={this.props.next} className="tertiary">Next Case Study <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                <div className='in-page-nav-section'>
+                    <Link to="/work" className="tertiary in-page-nav"><FontAwesomeIcon icon={['fas', 'arrow-left']} /> All case studies</Link>
+                    <Link to={this.props.next} className="tertiary in-page-nav">Next case study <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                </div>
             </section>
         )
     }
-}
+};
 
 class CaseStudySection extends Component {
     render() {
         return (
             <div className="case-study-section" data-scroll>
-                <h3>{this.props.header}</h3>
-                <img src={this.props.image} alt={this.props.alt} />
-                <p>
-                    {this.props.text}
-                </p>
+                {this.props.children}
             </div>
         )
     }
-}
+};
 
-export {CaseStudy, CaseStudySection};
+class CaseStudySectionHeader extends Component {
+    render() {
+        return (
+            <h2>{this.props.children}</h2>
+        )
+    }
+};
+
+class CaseStudySectionImage extends Component {
+    render() {
+        return (
+            <img src={this.props.image} alt={this.props.alt} />
+        )
+    }
+};
+
+class CaseStudySectionText extends Component {
+    render() {
+        return (
+            <p>{this.props.children}</p>
+        )
+    }
+};
+
+export {CaseStudy, CaseStudySection, CaseStudySectionHeader, CaseStudySectionImage, CaseStudySectionText};

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import MiscTab from './../components/misc-tabs.js';
 import LocomotiveScroll from 'locomotive-scroll';
 import SpaceMenuItem from '../components/space-menu-item.js';
 
@@ -16,19 +15,14 @@ class Space extends Component {
     render() {
         let tabs = [
             {
-                heading: "Playlist.",
-                path: "space/playlist",
+                heading: "Lists.",
+                path: "space/lists",
                 body: "Explore my best songs curated by genre or time period. Whatever works."
             },
             {
-                heading: "Watchlist.",
-                path: "space/watchlist",
-                body: "Great series i'm currently following or deserve a honourable mention."
-            },
-            {
-                heading: "Readlist.",
-                path: "space/readlist",
-                body: "Reader, huh? See if you like anything in here then."
+                heading: "Thoughts.",
+                path: "space/thoughts",
+                body: "Just random musings by yours truly."
             },
             {
                 heading: "Tools.",
@@ -49,11 +43,6 @@ class Space extends Component {
                 heading: "Vendors.",
                 path: "space/vendors",
                 body: "Need a plug for stuff? Check these guys out."
-            },
-            {
-                heading: "Thoughts.",
-                path: "space/thoughts",
-                body: "Just random musings by yours truly."
             },
             {
                 heading: "My Wishlist.",

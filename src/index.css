@@ -1,15 +1,26 @@
 :root{
+  /* --primary: #f2f2f2;
+  --primary-dark: #0c0c1040;
+  --secondary : #0d0d0d;
+  --accent-a: #2e2e2e;
+  --accent-c: #787878;
+  --accent-d: #c2c2c2; */
+
+  /* --secondary : #1d1d21;
+  --primary: #ffffff;
+  --accent-a: #616164;
+  --accent-c: #5a5a5a;
+  --accent-d: #f2f2f2; */
+
   --primary: #ffffff;
   --primary-dark: #0c0c1040;
-  --secondary : #1d1d21;
-  --accent-a: #616164;
-  --accent-b: #f64b29;
-  --accent-c: #5a5a5a;
+  --secondary : #0d0d0d;
+  --accent-a: #2e2e2e;
+  --accent-c: #787878;
   --accent-d: #f2f2f2;
   --lh-a: 1.5;
   --lh-b: 1.75;
   --lh-c: 2;
-  /* --main-font: 'Alliance No.2'; */
   --main-font: 'Space Mono', monospace;
   --sub-font: 'Manrope', sans-serif;
   --fs-one: 10vw;
@@ -17,6 +28,16 @@
   --fs-three: 5vw;
   --fs-four: 4vw;
   --fs-five: 3.25vw;
+}
+@media (prefers-color-scheme: dark) {
+  :root{
+    --primary: #0d0d0d;
+    --primary-dark: #0c0c1040;
+    --secondary : #f2f2f2;
+    --accent-a: #c2c2c2;
+    --accent-c: #787878;
+    --accent-d: #2e2e2e;
+  }
 }
 ::-webkit-scrollbar {
   display: none; /* chrome */

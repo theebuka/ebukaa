@@ -146,7 +146,7 @@ const Home = () => {
         <ul>
           <li>
             <span className='label-no animate-body'>01</span>
-            <span className='label animate-body'>art direction</span>
+            <span className='label animate-body'>art<br/>direction</span>
           </li>
           <li>
             <span className='label-no animate-body'>02</span>
@@ -158,11 +158,19 @@ const Home = () => {
   
             {console.log(gsap.utils.toArray("animate-body")) }
           </li>
+          <li>
+            <span className='label-no animate-body'>04</span>
+            <span className='label animate-body'>interaction<br/>design</span>
+          </li>
+          <li>
+            <span className='label-no animate-body'>05</span>
+            <span className='label animate-body'>brand identity design</span>
+          </li>
         </ul>
       </div>
       <div className="home-nav home-section">
         <Link to="/" className="primary animate-body">Download Resume</Link>
-        <Link to="/projects" className="tertiary animate-body">Projects <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+        <Link to="/work" className="tertiary animate-body">Work <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
       </div>
     </section>
   )
