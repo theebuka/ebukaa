@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import LocomotiveScroll from "locomotive-scroll";
-import gsap from "gsap";
+// import LocomotiveScroll from "locomotive-scroll";
+/* import gsap from "gsap";
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import SplitText from "./../split.min.js";
+import SplitText from "./../split.min.js"; */
 
 class Footer extends Component {
     componentDidMount() {
-        // eslint-disable-next-line
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector(".Footer"),
-            smooth: true
-        });
+        /* setInterval(() => this.setState({
+           time: new Date().toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric', hour12: true})
+        }), 1000); */
+        
 
-        gsap.registerPlugin(ScrollTrigger);
+        // gsap.registerPlugin(ScrollTrigger);
         /* function() {
             const targets = gsap.utils.toArray(".animate-body");
             targets.forEach((target) => {
@@ -52,13 +51,15 @@ class Footer extends Component {
         start: "bottom 95%"
         }); */
     }
+    /* componentWillUnmount() {
+        clearInterval(this.interval);
+    } */
 
     render() {
-
         return (
             <footer className="Footer">
                 <div className='contact-email'>
-                    <span className='animate-body'>Need to send a mail?</span>
+                    <span className='animate-body'>Let's create amazing stuff</span>
                     <h1 className='animate-body'><a href="mailto:me@theebuka.com">me@theebuka.com</a></h1>
                 </div>
                 <div className="portfolio">
@@ -75,13 +76,25 @@ class Footer extends Component {
                         <li className="footer-portfolio animate-body">
                             <a href="https://linkedin.com/">linkedin</a>
                         </li>
+                        <li className="footer-portfolio animate-body">
+                            <a href="/">download resume</a>
+                        </li>
                     </ul>
                 </div>
                 <div className="attribution">
-                    <span className='animate-body'>
-                        &copy; {new Date().getFullYear()} Chukwuebuka Nwaju
-                    </span>
-                    <span className='animate-body'>All rights reserved</span>
+                    <div className='year animate-body'>
+                        <span>{new Date().getFullYear()}</span>
+                    </div>
+                    <div className='info'>
+                        <div>
+                            <span className='animate-body'>{ }</span>
+                            <span className='animate-body'>Lagos</span>
+                        </div>
+                        <div>
+                            <span className='animate-body'>Chukwuebuka Nwaju</span>
+                            <span className='animate-body'>All rights reserved</span>
+                        </div>
+                    </div>
                 </div>
             </footer>
         )

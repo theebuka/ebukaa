@@ -5,7 +5,7 @@ class Badge extends Component {
         return (
             <svg className="round-text" viewBox="0 0 186 186" width="100%" height="100%">
                 <defs>
-                    <path id="circular-text" d="M 100 100 m -74 0 a 74, 74 0, 1, 1 148, 0 a 74, 74 0, 1, 1 -148, 0"/>
+                    <path id="circular-text" d="M 93 93 m -75 0 a 75, 75 0, 1, 1 150, 0 a 75, 75 0, 1, 1 -150, 0"/>
                 </defs>
                 <text>
                     <textPath href="#circular-text">

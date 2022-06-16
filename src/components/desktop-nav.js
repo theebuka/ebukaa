@@ -7,11 +7,12 @@ class Navigation extends Component {
             <nav className="desktop-nav">
                 <div>
                     <ul className="desktop-nav-list">
-                        <Navitem path="/" label="Home" />
-                        <Navitem path="/about" label="About" />
-                        <Navitem path="/projects" label="Projects" />
-                        <Navitem path="/contact" label="Contact" />
-                        <Navitem path="/misc" label="Misc" />
+                        <Navitem path="/" label="home" />
+                        {/* <Navitem path="/about" label="About" /> */}
+                        <Navitem path="/work" label="work" />
+                        <Navitem path="/shop" label="shop" />
+                        <Navitem path="/space" label="space" />
+                        <Navitem path="/contact" label="contact me" />
                     </ul>
                 </div>
             </nav>

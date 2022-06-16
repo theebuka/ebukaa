@@ -9,7 +9,12 @@ import {dev, design, writing} from './../data/work-data.js';
 class Work extends Component {
     render() {
         return(
-            <section className="Work">
+            <section className="Work Page">
+                <div>
+                    <p className="paragraph">
+                        Browse through my work here.
+                    </p>
+                </div>
                 <div>
                     <WorkTabs>
                         <ul className='work-item' label="Development">
@@ -28,7 +33,7 @@ class Work extends Component {
                             })}
                         </ul>
                     </WorkTabs>
-                    <Link to="/shop" className="tertiary" data-scroll>Shop <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+                    <Link to="/shop" className="tertiary in-page-nav">Shop <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
                 </div>
             </section>
         )

@@ -13,6 +13,7 @@ export { default as Space } from './pages/space.js';
 export { default as Error } from './pages/error.js';
 export { default as LoadingScreen } from './pages/loading.js';
 export { default as Playlist } from './pages/space-pages/playlist.js';
+export { default as Thoughts } from './pages/space-pages/thoughts.js';
 export { default as BlackIvy } from './pages/design-pages/blackivy.js';
 
 

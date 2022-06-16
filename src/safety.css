@@ -737,6 +737,43 @@
         text-align: right;
       } */
   
+      
+  /* .Work > div .tabs .tab-content li.work-list-item {
+    list-style-type: none;
+    margin: 0 0 16vw;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+    position: relative;
+  }
+  .Work > div .tabs .tab-content li.work-list-item span.label-no {
+    display: inline-block;
+    color: var(--accent-d);
+    font-family: var(--main-font);
+    font-size: 22vw;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 22vw;
+    letter-spacing: 0.25vw;
+    z-index: -1;
+  }
+  .Work > div .tabs .tab-content li.work-list-item a.label {
+    display: inline-block;
+    color: var(--secondary);
+    font-family: var(--main-font);
+    font-size: var(--fs-two);
+    font-style: normal;
+    font-weight: normal;
+    line-height: var(--lh-a);
+    letter-spacing: 0.25vw;
+    height: fit-content;
+    margin-right: 14vw;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-bottom: 3vw;
+  } */
     .Projects .tab-list {
       padding-left: 0;
       width: 100%;

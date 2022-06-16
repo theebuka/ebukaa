@@ -1,58 +1,58 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 
 class CaseStudy extends Component {
-    componentDidMount() {
+   /*  componentDidMount() {
       // eslint-disable-next-line
         const scroll = new LocomotiveScroll({
             el: document.querySelector(".Case-study"),
             smooth: true
         })
-    }
+    } */
     render() {
         return (
-            <section className="Case-study" data-scroll-section>
-                <div className="header" data-scroll-container>
+            <section className="Case-study Page">
+                <div className="header">
                     <div>
-                        <div data-scroll>
+                        <div>
                             <span className='minor-subheading'>Project Title</span>
-                            <h2 data-scroll>{this.props.title}</h2>
+                            <h2>{this.props.title}</h2>
                         </div>
-                        <div data-scroll>
+                        <div>
                             <span className='minor-subheading'>Subtitle</span>
-                            <h3 data-scroll>{this.props.subtitle}</h3>
+                            <h3>{this.props.subtitle}</h3>
                         </div>
                     </div>
                     <div>
-                        <div data-scroll>
+                        <div>
                             <span className='minor-subheading'>Role</span>
-                            <h4 data-scroll>{this.props.role}</h4>
+                            <h4>{this.props.role}</h4>
                         </div>
-                        <div data-scroll>
+                        <div>
                             <span className='minor-subheading'>Type</span>
-                            <h4 data-scroll>{this.props.type}</h4>
+                            <h4>{this.props.type}</h4>
                         </div>
                     </div>
                     <div>
-                        <div data-scroll>
+                        <div>
                             <span className='minor-subheading'>Niche</span>
-                            <h4 data-scroll>{this.props.niche}</h4>
+                            <h4>{this.props.niche}</h4>
                         </div>
-                        <div data-scroll>
+                        <div>
                             <span className='minor-subheading'>Timeframe</span>
-                            <h4 data-scroll>{this.props.timeframe}</h4>
+                            <h4>{this.props.timeframe}</h4>
                         </div>
                     </div>
                     <div>
                         <div>
                             <span className='minor-subheading'>Project Summary</span>
-                            <p data-scroll>{this.props.summary}</p>
+                            <p>{this.props.summary}</p>
                         </div>
                     </div>
                 </div>
-                <div className="body" data-scroll-container>
+                <div className="body">
                     {this.props.children}
                 </div>
                 <div className='in-page-nav-section'>
@@ -67,7 +67,7 @@ class CaseStudy extends Component {
 class CaseStudySection extends Component {
     render() {
         return (
-            <div className="case-study-section" data-scroll>
+            <div className="case-study-section">
                 {this.props.children}
             </div>
         )

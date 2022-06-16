@@ -6,6 +6,7 @@ import SplitText from "./../split.min.js";
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ProfilePhoto from './../images/bicycle-man.jpg';
 import Badge from './../components/badge.js';
+import { ArrowDown } from 'react-feather';
 
 
 const Home = () => {
@@ -17,10 +18,10 @@ const Home = () => {
     let scroll;
     import("locomotive-scroll").then((locomotiveModule) => {
       scroll = new locomotiveModule.default({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-        smoothMobile: false,
-        resetNativeScroll: true
+        el: document.querySelector(".home-about")
+        // smooth: true,
+        // smoothMobile: true,
+        // resetNativeScroll: true
       });
     });
 
@@ -50,17 +51,17 @@ const Home = () => {
   };
 
   useEffect(() => {
-    var rotate = gsap.timeline({
+    gsap.timeline({
       scrollTrigger: {
-        trigger: ".home-about",
+        trigger: ".home-anchor",
         scrub: true,
-        start: 'top center',
-        end: 'bottom 1px',
+        start: 'top bottom',
+        end: 'bottom top',
       }
     }).to('#circular-text', {
-      rotation: 320,
+      rotation: 160,
       transformOrigin: 'center center',
-      duration: 10, ease: 'expo',
+      duration: 20, ease: 'power.4',
     })
   });
 
@@ -89,7 +90,7 @@ const Home = () => {
   }, [targets]);
 
   return (
-    <section onLoad={anim} className="Home">
+    <section onLoad={anim} className="Home Page">
       <div className="name-and-title home-section">
         <h1 id='name' className="name animate">
           Chukwuebuka Nwaju &mdash; frontend developer, product designer &amp; writer based in Lagos.
@@ -112,65 +113,68 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
-        <h3 className="scroll-effect" data-scroll data-scroll-direction="hrizontal" data-scroll-speed="-8" data-scroll-target="#direction"> Keep scrolling, almost there</h3>
-        <h3 className="scroll-effect" data-scroll data-scroll-direction="hrizontal" data-scroll-speed="-8" data-scroll-target="#direction"> Yep, you guessed it</h3>
-        <h3 className="scroll-effect" data-scroll data-scroll-direction="hrizontal" data-scroll-speed="-8" data-scroll-target="#direction"> These are just fillers lol</h3>
+
+
+      <div className='home-anchor home-section'>
+        <Badge />
+        <ArrowDown />
       </div>
+
+
       <div className='home-about home-section'>
         <div className='image-container'>
           <div className="image-wrapper" data-scroll>
             <img src={ProfilePhoto} className="home-profile-image" alt="black and white birds-eye view of man riding a bicycle across an empty intersection" data-scroll />
           </div>
-          <div>
-            <Badge />
-          </div>
         </div>
         <div className='about-text'>
+          <h2 className="home-section-header">about</h2>
           <p className='animate-body'>
-            Hello.
+            Hey there &mdash; I'm Chukwuebuka Nwaju, a frontend web developer, product designer and writer based in Lagos, Nigeria.
           </p>
           <p className='animate-body'>
-            I'm Chukwuebuka Nwaju, a frontend web developer, product designer and copywriter based in Lagos, Nigeria.
-          </p>
-          <p className='animate-body'>
-            I help brands and startups develop fast, accessible &amp; responsive websites, design aesthetic usable interfaces and write compelling copy to improve their online presence and brand recognition.
+            I help brands build fast, accessible &amp; responsive websites, design aesthetic usable interfaces and write compelling copy to improve their online presence and brand recognition.
           </p>
           <p className='animate-body'>
             I am passionate about creating products and solutions to help shape the future of tech and the global industrial ecosystem.
           </p>
         </div>
       </div>
-      <div className="skillset home-section">
-        <h2 className='animate-body'>expertise</h2>
-        <ul>
+
+
+      <div className="home-skillset home-section">
+        <h2 className='animate-body home-section-header'>expertise</h2>
+        <p>
+          UI design &mdash; UX research &mdash; Art direction &mdash; UX design &mdash; ReactJS &mdash; Interaction design &mdash; Brand identity design
+        </p>
+      </div>
+
+
+      <div className="home-awards home-section">
+        <h2 className='home-section-header'>awards and recognitions</h2>
+        <ul className='home-awards-list'>
           <li>
-            <span className='label-no animate-body'>01</span>
-            <span className='label animate-body'>art<br/>direction</span>
+            <a href="#">Muzli</a><span>&mdash; #13</span>
           </li>
           <li>
-            <span className='label-no animate-body'>02</span>
-            <span className='label animate-body'>user interface design</span>
+            <a href="$">Awwwards SOTD</a><span>&mdash; coming soon</span>
           </li>
           <li>
-            <span className='label-no animate-body'>03</span>
-            <span className='label animate-body'>user experience design</span>
-  
-            {console.log(gsap.utils.toArray("animate-body")) }
+            <a href="#">Awwwards SOTW</a><span>&mdash; coming soon</span>
           </li>
           <li>
-            <span className='label-no animate-body'>04</span>
-            <span className='label animate-body'>interaction<br/>design</span>
-          </li>
-          <li>
-            <span className='label-no animate-body'>05</span>
-            <span className='label animate-body'>brand identity design</span>
+            <a href="#">Awwwards SOTM</a><span>&mdash; coming soon</span>
           </li>
         </ul>
       </div>
+
+
       <div className="home-nav home-section">
-        <Link to="/" className="primary animate-body">Download Resume</Link>
-        <Link to="/work" className="tertiary animate-body">Work <FontAwesomeIcon icon={['fas', 'arrow-right']} /></Link>
+        
+        <Link to="/work" className="">
+          <span>Browse</span>
+          <span>Work <FontAwesomeIcon icon={['fas', 'arrow-right']} /></span>
+        </Link>
       </div>
     </section>
   )

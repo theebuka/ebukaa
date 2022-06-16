@@ -5,8 +5,8 @@ import ErrorImage from './../images/error.svg';
 class Error extends Component {
     render() {
         return(
-            <section className="Error">
-                <div>
+            <section className="Error Page">
+                <div className='error-wrapper'>
                     <div>
                         <img src={ErrorImage} alt="404 error of a robot"></img>
                         <h1>404</h1>
@@ -15,9 +15,6 @@ class Error extends Component {
                     <p>
                         Seems like you've entered a broken link (my bad) or the resource you're looking for doesn't exist.
                     </p>
-                    {/* <p>
-                        Check the link again or <Link to="/">Go Back To Home Page</Link>
-                    </p> */}
                     <Link to="/" className="primary">Back to Home</Link>
                 </div>
             </section>
