@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoadingScreen from './pages/loading.js';
 import { Home, Work, Contact, Shop, Space, Error } from './index.js';
-import { Playlist, Thoughts } from './index.js';
+import { Lists, Thoughts, People, Resources, Wishlist } from './index.js';
 import { BlackIvy } from './index.js';
 import Navigation from './components/desktop-nav.js';
 import Topbar from './components/topbar.js';
@@ -16,7 +16,7 @@ library.add(fab, fas);
 
 function App() {
   const [preloader, setPreloader] = useState(true);
-  const [timer, setTimer] = useState(5);
+  const [timer, setTimer] = useState(3);
   const id = useRef(null);
   const clear = () => {
     window.clearInterval(id.current);
@@ -66,8 +66,11 @@ function App() {
               <Route path="/space" render={({ match: { url } }) => (
                 <div>
                   <Route path={`${url}/`} component={Space} exact />
-                  <Route path={`${url}/playlist`} component={Playlist} />
+                  <Route path={`${url}/lists`} component={Lists} />
                   <Route path={`${url}/thoughts`} component={Thoughts} />
+                  <Route path={`${url}/people`} component={People} />
+                  <Route path={`${url}/resources`} component={Resources} />
+                  <Route path={`${url}/wishlist`} component={Wishlist} />
                 </div>
               )} />
 

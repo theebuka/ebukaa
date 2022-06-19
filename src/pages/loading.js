@@ -6,7 +6,7 @@ class LoadingScreen extends Component {
             <section className="preloader-wrapper absolute">
                 <div className="preloader-name">
                     <div>
-                        <h1>CN.</h1>
+                        <h1>Chukwuebuka.</h1>
                     </div>
                 </div>
                 <div className="preloader-line">

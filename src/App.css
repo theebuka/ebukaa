@@ -173,7 +173,7 @@ html.has-scroll-dragging {
 
 @media only screen and (max-width: 760px) {
   .preloader-wrapper {
-    background-color: var(--secondary);
+    background-color: var(--pre-secondary);
     opacity: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -194,17 +194,16 @@ html.has-scroll-dragging {
     height: 92%;
   }
   .preloader-wrapper .preloader-name > div > h1 {
-    font-size: 12vw;
+    font-size: var(--fs-two);
     color: var(--primary);
     font-family: var(--main-font);
     margin-bottom: 1vw;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 0.15rem; */
   }
   .preloader-wrapper .preloader-line {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     height: 8%;
     position: relative;
@@ -213,7 +212,7 @@ html.has-scroll-dragging {
     position: absolute;
     left: 0;
     border-bottom: 2px solid var(--primary);
-    animation: line 5s linear forwards;
+    animation: line 3s linear forwards;
   }
   @keyframes line {
     from {
@@ -955,52 +954,7 @@ html.has-scroll-dragging {
     text-align: right;
     font-size: var(--fs-five);
   }
-  .space-section-item {
-    padding: 2vh 2vw;
-    margin-bottom: 2.5vh;
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .space-section-item > div {
-    width: auto;
-    padding: 1vh 0.5vw;
-  }
-  .space-section-item > div:first-child {
-    justify-self: flex-start;
-  }
-  .space-section-item > div:first-child h1 {
-    color: var(--secondary);
-    font-family: var(--main-font);
-    font-size: 7vw;
-    line-height: var(--lh-a);
-    font-weight: normal;
-    font-style: normal;
-  }
-  .space-section-item > div:first-child h1 a,
-  .space-item > div:first-child h1 a:visited {
-    text-decoration: none;
-    color: currentColor;
-  }
-  .space-section-item > div:last-child {
-    width: fit-content;
-    margin-left: auto;
-  }
-  .space-section-item > div:last-child span {
-    color: var(--accent-a);
-    font-family: var(--sub-font);
-    font-size: var(--fs-five);
-    line-height: var(--lh-a);
-    font-weight: normal;
-    font-style: normal;
-    text-align: right;
-    text-transform: uppercase;
-  }
-  .space-section-item > div:last-child > span:first-child {
-    color: var(--accent-b);
-    font-size: var(--fs-four);
-    text-transform: capitalize;
-  }
-
+  
   .space-header {
     display: flex;
     align-items: center;
@@ -1025,38 +979,102 @@ html.has-scroll-dragging {
     text-decoration: none;
   }
 
-  .Thoughts div.thoughtcard {
+  section.Thoughts div.thoughtcard {
     padding: 6vh 0;
     border-bottom: 1px solid var(--accent-d);
   }
-  .Thoughts div.thoughtcard:last-of-type {
+  section.Thoughts div.thoughtcard:last-of-type {
     border-bottom: none;
 
   }
-  .Thoughts div.thoughtcard > div:first-child {
+  section.Thoughts div.thoughtcard > div:first-child {
     display: flex;
     flex-flow: column nowrap;
   }
-  .Thoughts div.thoughtcard > div:first-child span.datetime {
+  section.Thoughts div.thoughtcard > div:first-child span.datetime {
     display: inline-flex;
     align-items: center;
     color: var(--accent-c);
     font-size: var(--fs-five);
     padding: 1vh 0;
   }
-  .Thoughts div.thoughtcard > div:first-child h1.title {
+  section.Thoughts div.thoughtcard > div:first-child h1.title {
     color: var(--secondary);
     font-size: var(--fs-four);
     padding: 1vh 0;
   }
-  .Thoughts div.thoughtcard > div:last-child  {
+  section.Thoughts div.thoughtcard > div:last-child  {
     padding: 3vh 0;
   }
-  .Thoughts div.thoughtcard > div:last-child p  {
+  section.Thoughts div.thoughtcard > div:last-child p  {
     color: var(--accent-a);
     font-size: var(--fs-five);
     line-height: var(--lh-c);
   }
+
+  section.Lists > ul,
+  section.Resources > ul,
+  section.Wishlist > ul,
+  section.People > ul {
+    margin-bottom: 24vh;
+  }
+  section.Lists > ul:last-child,
+  section.Resources > ul:last-child,
+  section.Wishlist > ul:last-child,
+  section.People > ul:last-child {
+    margin-bottom: 4vh;
+  }
+  section.Lists > ul li.listcard,
+  section.Resources > ul li.resourcecard,
+  section.Wishlist > ul li.wishlistcard,
+  section.People > ul li.peoplecard {
+    padding: 1.5vh 4vw;
+    margin-bottom: 3vh;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  section.Lists > ul.listcard-section h1.listcard-section-header {
+    font-size: var(--fs-four);
+    color: var(--accent-c);
+    text-align: center;
+    padding: 1vh 0;
+    margin-bottom: 1vh;
+    font-variant: small-caps;
+  }
+  section.Lists > ul li.listcard a,
+  section.Resources > ul li.resourcecard a,
+  section.Wishlist > ul li.wishlistcard a,
+  section.People > ul li.peoplecard a {
+    color: var(--secondary);
+    font-size: var(--fs-four);
+    padding-bottom: 1vh;
+    text-decoration: none;
+    display: block;
+  }
+  section.Lists > ul li.listcard a:visited,
+  section.Resources > ul li.resourcecard a:visited,
+  section.Wishlist > ul li.wishlistcard a:visited,
+  section.People > ul li.peoplecard a:visited {
+    color: var(--accent-a);
+  }
+  section.Lists > ul li.listcard a:hover,
+  section.Resources > ul li.resourcecard a:hover,
+  section.Wishlist > ul li.wishlistcard a:hover,
+  section.People > ul li.peoplecard a:hover {
+    color: var(--accent-c);
+    text-decoration: underline;
+    text-underline-offset: 1vh;
+  }
+  section.Lists > ul li.listcard span,
+  section.Resources > ul li.resourcecard span,
+  section.People > ul li.peoplecard span {
+    color: var(--accent-c);
+    font-size: var(--fs-five);
+    line-height: var(--lh-b);
+  }
+
 
 
   .Error div.error-wrapper {
@@ -1109,7 +1127,7 @@ html.has-scroll-dragging {
 @media screen and (min-width: 1024px) {
 
   .preloader-wrapper {
-    background-color: var(--secondary);
+    background-color: var(--pre-secondary);
     opacity: 100%;
     display: flex;
     flex-flow: column nowrap;
@@ -1130,13 +1148,13 @@ html.has-scroll-dragging {
     height: 92%;
   }
   .preloader-wrapper .preloader-name > div > h1 {
-    font-size: 12vw;
+    font-size: var(--fs-two);
     color: var(--primary);
     font-family: var(--main-font);
     margin-bottom: 1vw;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.15rem;
+    /* text-transform: uppercase;
+    letter-spacing: 0.15rem; */
   }
   .preloader-wrapper .preloader-line {
     display: flex;
@@ -1148,7 +1166,7 @@ html.has-scroll-dragging {
     position: absolute;
     left: 0;
     border-bottom: 2px solid var(--primary);
-    animation: line 5s linear forwards;
+    animation: line 3s linear forwards;
   }
   @keyframes line {
     from {
@@ -1317,17 +1335,7 @@ html.has-scroll-dragging {
   
 
 
-  .Page
-  /* .Home,
-  .About,
-  .Work,
-  .Contact,
-  .Shop,
-  .Space,
-  .Error,
-  .Case-study,
-  .Playlist,
-  .Readlist */ {
+  .Page {
     position: relative;
     margin-top: 12.5vh;
     z-index: 10;
@@ -1875,51 +1883,6 @@ html.has-scroll-dragging {
     text-align: right;
     font-size: var(--fs-five);
   }
-  .space-section-item {
-    padding: 2vh 2vw;
-    margin-bottom: 2.5vh;
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .space-section-item > div {
-    width: auto;
-    padding: 1vh 0.5vw;
-  }
-  .space-section-item > div:first-child {
-    justify-self: flex-start;
-  }
-  .space-section-item > div:first-child h1 {
-    color: var(--secondary);
-    font-family: var(--main-font);
-    font-size: 7vw;
-    line-height: var(--lh-a);
-    font-weight: normal;
-    font-style: normal;
-  }
-  .space-section-item > div:first-child h1 a,
-  .space-item > div:first-child h1 a:visited {
-    text-decoration: none;
-    color: currentColor;
-  }
-  .space-section-item > div:last-child {
-    width: fit-content;
-    margin-left: auto;
-  }
-  .space-section-item > div:last-child span {
-    color: var(--accent-a);
-    font-family: var(--sub-font);
-    font-size: var(--fs-five);
-    line-height: var(--lh-a);
-    font-weight: normal;
-    font-style: normal;
-    text-align: right;
-    text-transform: uppercase;
-  }
-  .space-section-item > div:last-child > span:first-child {
-    color: var(--accent-b);
-    font-size: var(--fs-four);
-    text-transform: capitalize;
-  }
 
   .space-header {
     display: flex;
@@ -1945,39 +1908,106 @@ html.has-scroll-dragging {
     text-decoration: none;
   }
 
-  .Thoughts div.thoughtcard {
+  section.Thoughts div.thoughtcard {
     padding: 5vh 0;
     border-bottom: 1px solid var(--accent-d);
   }
-  .Thoughts div.thoughtcard:last-of-type {
+  section.Thoughts div.thoughtcard:last-of-type {
     border-bottom: none;
-
   }
-  .Thoughts div.thoughtcard > div:first-child {
+  section.Thoughts div.thoughtcard > div:first-child {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
-  .Thoughts div.thoughtcard > div:first-child span.datetime {
+  section.Thoughts div.thoughtcard > div:first-child span.datetime {
     display: inline-flex;
     align-items: center;
     color: var(--accent-c);
     font-size: var(--fs-five);
     order: 2;
   }
-  .Thoughts div.thoughtcard > div:first-child h1.title {
+  section.Thoughts div.thoughtcard > div:first-child h1.title {
     color: var(--secondary);
     font-size: var(--fs-four);
     order: 1;
   }
-  .Thoughts div.thoughtcard > div:last-child  {
+  section.Thoughts div.thoughtcard > div:last-child  {
     padding: 1vw 0;
   }
-  .Thoughts div.thoughtcard > div:last-child p  {
+  section.Thoughts div.thoughtcard > div:last-child p  {
     color: var(--accent-a);
     font-size: var(--fs-five);
     line-height: var(--lh-c);
   }
+
+  section.Lists > ul,
+  section.Resources > ul,
+  section.Wishlist > ul,
+  section.People > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    margin-bottom: 12vh;
+  }
+  section.Lists > ul:last-child,
+  section.Resources > ul:last-child,
+  section.Wishlist > ul:last-child,
+  section.People > ul:last-child {
+    margin-bottom: 2vh;
+  }
+  section.Lists > ul li.listcard,
+  section.Resources > ul li.resourcecard,
+  section.Wishlist > ul li.wishlistcard,
+  section.People > ul li.peoplecard {
+    padding: 1.5vh 1.5vw;
+    margin-bottom: 4vh;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  section.Lists > ul.listcard-section h1.listcard-section-header {
+    font-size: var(--fs-four);
+    color: var(--accent-c);
+    text-align: center;
+    padding: 1vh 0;
+    margin-bottom: 1vh;
+    font-variant: small-caps;
+    grid-column: 1/ span 3;
+  }
+  section.Lists > ul li.listcard a,
+  section.Resources > ul li.resourcecard a,
+  section.Wishlist > ul li.wishlistcard a,
+  section.People > ul li.peoplecard a {
+    color: var(--secondary);
+    font-size: var(--fs-four);
+    padding-bottom: 1vh;
+    text-decoration: none;
+    display: block;
+  }
+  section.Lists > ul li.listcard a:visited,
+  section.Resources > ul li.resourcecard a:visited,
+  section.Wishlist > ul li.wishlistcard a:visited,
+  section.People > ul li.peoplecard a:visited {
+    color: var(--accent-a);
+  }
+  section.Lists > ul li.listcard a:hover,
+  section.Resources > ul li.resourcecard a:hover,
+  section.Wishlist > ul li.wishlistcard a:hover,
+  section.People > ul li.peoplecard a:hover {
+    color: var(--accent-c);
+    text-decoration: underline;
+    text-underline-offset: 1vh;
+  }
+  section.Lists > ul li.listcard span,
+  section.Resources > ul li.resourcecard span,
+  section.People > ul li.peoplecard span {
+    color: var(--accent-c);
+    font-size: var(--fs-five);
+    line-height: var(--lh-b);
+  }
+
 
   .Error {
     display: flex;

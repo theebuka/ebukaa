@@ -15,8 +15,9 @@
   --primary: #ffffff;
   --primary-dark: #0c0c1040;
   --secondary : #0a0a0a;
+  --pre-secondary : #0a0a0a;
   --accent-a: #2e2e2e;
-  --accent-c: #787878;
+  --accent-c: #838384;
   --accent-d: #f2f2f2;
   --lh-a: 1.5;
   --lh-b: 1.75;
@@ -34,9 +35,10 @@
   :root{
     --primary: #0a0a0a;
     --primary-dark: #0c0c1040;
+    --pre-secondary : #fcfcfc;
     --secondary : #e8e8e8;
     --accent-a: #c2c2c2;
-    --accent-c: #787878;
+    --accent-c: #838384;
     --accent-d: #2e2e2e;
   }
 }
