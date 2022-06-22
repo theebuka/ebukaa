@@ -67,14 +67,14 @@ const design = [
     {
         id: 1,
         title: "Black Ivy Hairs",
-        link: "/work/blackivy",
+        link: "/work/design/blackivy",
         summary: "CSS styling library with utility classes for rapid prototyping",
         number: "01"
     },
     {
         id: 2,
         title: "Vix",
-        link: "/",
+        link: "/work/design/",
         summary: "CSS styling library with utility classes for rapid prototyping",
         number: "02"
     },
@@ -83,17 +83,15 @@ const design = [
 const writing = [
     {
         id: 1,
-        title: "Black Ivy Hairs",
-        link: "/work/blackivy",
-        summary: "CSS styling library with utility classes for rapid prototyping",
+        title: "God is the greatest; Here's 10000000 reasons why",
+        link: "/work/writing/God-is-the-greatest-here's-10000000-reasons-why",
         number: "01"
     },
     {
         id: 2,
-        title: "Black Ivy Hairs",
+        title: "Javascript is the greatest language on the planet",
         link: "/work/blackivy",
-        summary: "CSS styling library with utility classes for rapid prototyping",
-        number: "01"
+        number: "02"
     }
 ]
 

@@ -4,6 +4,7 @@ import LoadingScreen from './pages/loading.js';
 import { Home, Work, Contact, Shop, Space, Error } from './index.js';
 import { Lists, Thoughts, People, Resources, Wishlist } from './index.js';
 import { BlackIvy } from './index.js';
+import { Article1 } from './index.js';
 import Navigation from './components/desktop-nav.js';
 import Topbar from './components/topbar.js';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -51,7 +52,13 @@ function App() {
               <Route path="/work" render={({ match: { url } }) => (
                 <div>
                   <Route path={`${url}/`} component={Work} exact />
-                  <Route path={`${url}/blackivy`} component={BlackIvy} />
+
+                  {/* Design */}
+                  <Route path={`${url}/design/blackivy`} component={BlackIvy} />
+
+
+                  {/* Writing */}
+                  <Route path={`${url}/writing/God-is-the-greatest-here's-10000000-reasons-why`} component={Article1} />
                 </div>
               )} />
 

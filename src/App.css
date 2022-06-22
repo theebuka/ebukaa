@@ -47,7 +47,6 @@ a.tertiary {
   font-style: normal;
   font-weight: normal;
   font-size: var(--fs-five);
-  /* text-transform: uppercase; */
   text-align: center;
   margin-top: 4vw;
   cursor: pointer;
@@ -171,7 +170,22 @@ html.has-scroll-dragging {
     rotate(1deg);
 }
 
+
+
+
+
+
+
+
+
+  /* ------ MOBILE STYLING ------ */
+
 @media only screen and (max-width: 760px) {
+  
+
+
+  /* ------ Styling for Loading Page - Mobile ------ */
+
   .preloader-wrapper {
     background-color: var(--pre-secondary);
     opacity: 100%;
@@ -199,8 +213,6 @@ html.has-scroll-dragging {
     font-family: var(--main-font);
     margin-bottom: 1vw;
     font-weight: bold;
-    /* text-transform: uppercase; */
-    /* letter-spacing: 0.15rem; */
   }
   .preloader-wrapper .preloader-line {
     display: flex;
@@ -224,6 +236,10 @@ html.has-scroll-dragging {
       width: 100%;
     }
   }
+
+
+
+  /* ------ Styling for Topbar and Navigation - Mobile ------ */
 
   .topbar-wrapper {
     height: auto;
@@ -285,13 +301,12 @@ html.has-scroll-dragging {
     text-align: center;
     transition: opacity 0.75s linear 0.25s;
     display: flex;
-    /* align-items: top; */
-    justify-content: center;
+    align-items: center;
   }
   .topbar-wrapper > div.menuNav.showMenu {
     width: 100%;
     height: 100vh;
-    padding-top: 25vh;
+    padding-top: 5vh;
     opacity: 100%;
     overflow-y: hidden;
     transition: opacity 0.75s linear 0.25s;
@@ -300,17 +315,19 @@ html.has-scroll-dragging {
     list-style: none;
     width: 100%;
     padding: 0 6vw;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
   }
   .topbar-wrapper > div.menuNav li {
-    padding: 0;
+    padding: 0.75vh 0;
     margin: 0;
   }
   .topbar-wrapper > .menuNav a {
     display: block;
     width: fit-content;
-    font-size: var(--fs-two);
-    padding: 4vw;
-    margin-right: auto;
+    font-size: var(--fs-three);
+    padding: 3vw;
     text-decoration: none;
     color: var(--accent-c);
     text-transform: uppercase;
@@ -324,10 +341,12 @@ html.has-scroll-dragging {
   }
   .topbar-wrapper .menuNav a svg {
     vertical-align: middle;
+    display: none;
   }
   .topbar-wrapper .menuNav a.active svg {
     width: 24px;
     height: 24px;
+    display: inline;
     vertical-align: middle;
   }
   nav.desktop-nav {
@@ -340,6 +359,9 @@ html.has-scroll-dragging {
     margin-left: auto;
   }
 
+
+
+  /* ------ Styling for Footer - Mobile ------ */
 
   .Footer {
     border-top: 1px solid var(--accent-d);
@@ -421,17 +443,10 @@ html.has-scroll-dragging {
   }
   
 
-  .Page
-  /* .Home,
-  .About,
-  .Work,
-  .Contact,
-  .Shop,
-  .Space,
-  .Error,
-  .Case-study,
-  .Playlist,
-  .Readlist */ {
+
+  /* ------ Styling for All Pages - Mobile ------ */
+
+  .Page {
     position: relative;
     margin-top: 12.5vh;
     z-index: 10;
@@ -440,12 +455,16 @@ html.has-scroll-dragging {
     padding: 5vh 6vw 14vh;
   }
 
+
+
+  /* ------ Styling for Home Page - Mobile ------ */
+
   .Home {
     display: flex;
     flex-flow: nowrap column;
   }
   .Home div.home-section {
-    margin: 8vh 0;
+    margin: 6.5vh 0;
     padding: 4vh 0;
   }
   .Home > div.name-and-title {
@@ -594,7 +613,7 @@ html.has-scroll-dragging {
   .Home div.home-awards ul.home-awards-list li {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 4vh 0;
+    padding: 3.5vh 0;
     border-bottom: 1px solid var(--accent-d);
   }
   .Home div.home-awards ul.home-awards-list li > a {
@@ -612,6 +631,7 @@ html.has-scroll-dragging {
   }
   .Home div.home-nav {
     margin-bottom: 0;
+    padding: 0;
   }
   .Home div.home-nav > a {
     display: flex;
@@ -631,8 +651,10 @@ html.has-scroll-dragging {
     vertical-align: middle;
   }
 
- 
-  
+
+
+  /* ------ Styling for Work Page - Mobile ------ */
+
   .Work > div:first-child {
     margin: 0 0 9vh;
   }
@@ -694,6 +716,10 @@ html.has-scroll-dragging {
     text-align: right;
     font-size: var(--fs-five);
   }
+
+
+
+  /* ------ Styling for Case Study Page - Mobile ------ */
 
   .Case-study .header {
     margin: 2vh 0 10vh;
@@ -774,6 +800,85 @@ html.has-scroll-dragging {
     text-align: center;
   }
 
+
+
+  /* ------ Styling for Writing Page - Mobile ------ */
+
+  .Writing div.header {
+    margin: 2vh 0;
+    /* padding-left: 4vw; */
+    /* border-left: 1vw solid var(--accent-c); */
+  }
+  .Writing div.header > div:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* .Writing div.header > div {
+    margin: 0 0 2vh;
+  } */
+  .Writing div.header > div:nth-child(1) h2 {
+    color: var(--accent-c);
+    font-family: var(--main-font);
+    font-size: var(--fs-five);
+    line-height: var(--lh-a);
+    font-weight: normal;
+    font-style: normal;
+    margin-bottom: 3vh;
+  }
+  .Writing div.header > div:nth-child(2) h1 {
+    color: var(--secondary);
+    font-family: var(--sub-font);
+    font-size: var(--fs-two);
+    line-height: var(--lh-a);
+    font-weight: bold;
+    font-style: normal;
+    margin-bottom: 3vh;
+  }
+  .Writing div.header > div:nth-child(2) p {
+    color: var(--accent-c);
+    font-family: var(--main-font);
+    font-size: var(--fs-five);
+    line-height: var(--lh-b);
+    font-weight: normal;
+    font-style: normal;
+    padding-bottom: 1vh;
+  }
+  
+  .Writing .body {
+    padding: 1vh 0;
+  }
+  .Writing .body > div.writing-section {
+    margin-bottom: 8vh;
+  }
+  .Writing .body > div.writing-section:last-of-type {
+    margin-bottom: 1vh;
+  }
+  .Writing .body > div.writing-section h2 {
+    color: var(--secondary);
+    font-family: var(--main-font);
+    font-size: var(--fs-three);
+    line-height: var(--lh-b);
+    font-weight: 600;
+    font-style: normal;
+    padding: 0 0 4vh;
+  }
+  .Writing .body > div.writing-section img {
+    margin: 4vh 0 6vh;
+  }
+  .Writing .body > div.writing-section p {
+    color: var(--secondary);
+    font-family: var(--sub-font);
+    font-size: var(--fs-four);
+    line-height: var(--lh-c);
+    font-weight: normal;
+    font-style: normal;
+    padding: 0 0 3.5vh;
+    text-indent: 12%;
+  }
+  
+
+
+  /* ------ Styling for Contact Page - Mobile ------ */
 
   .Contact {
     display: flex;
@@ -893,6 +998,10 @@ html.has-scroll-dragging {
     color: var(--secondary);
   }
 
+  
+
+  /* ------ Styling for Shop Page - Mobile ------ */
+
   .Shop {
     display: flex;
     justify-content: center;
@@ -908,6 +1017,10 @@ html.has-scroll-dragging {
     margin-bottom: 16vw;
     font-weight: normal;
   }
+
+
+  
+  /* ------ Styling for Space Page - Mobile ------ */
 
   .Space > div:first-child {
     margin: 0 0 15vw;
@@ -955,29 +1068,9 @@ html.has-scroll-dragging {
     font-size: var(--fs-five);
   }
   
-  .space-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 0;
-  }
-  .space-header h1 {
-    margin: 0;
-    color: var(--secondary);
-    font-family: var(--main-font);
-    padding: 1.5rem;
-  }
-  .space-header a {
-    display: inline-block;
-    background-color: var(--primary);
-    padding: 0.5rem 1.6rem;
-    color: var(--secondary);
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-decoration: none;
-  }
+
+  
+  /* ------ Styling for Thoughts Page - Mobile ------ */
 
   section.Thoughts div.thoughtcard {
     padding: 6vh 0;
@@ -1011,6 +1104,10 @@ html.has-scroll-dragging {
     font-size: var(--fs-five);
     line-height: var(--lh-c);
   }
+
+  
+  
+  /* ------ Styling for Lists, Resources, Wishlist and People Pages - Mobile ------ */
 
   section.Lists > ul,
   section.Resources > ul,
@@ -1075,7 +1172,9 @@ html.has-scroll-dragging {
     line-height: var(--lh-b);
   }
 
-
+  
+  
+  /* ------ Styling for Error Page - Mobile ------ */
 
   .Error div.error-wrapper {
     text-align: center;
@@ -1117,14 +1216,15 @@ html.has-scroll-dragging {
 
 
 
-
-
-
-
-
-
+  
+  
+  /* ------- DESKTOP STYLING ------- */
 
 @media screen and (min-width: 1024px) {
+
+  
+  
+  /* ------ Styling for LoadingPage - Desktop ------ */
 
   .preloader-wrapper {
     background-color: var(--pre-secondary);
@@ -1153,8 +1253,6 @@ html.has-scroll-dragging {
     font-family: var(--main-font);
     margin-bottom: 1vw;
     font-weight: bold;
-    /* text-transform: uppercase;
-    letter-spacing: 0.15rem; */
   }
   .preloader-wrapper .preloader-line {
     display: flex;
@@ -1178,6 +1276,10 @@ html.has-scroll-dragging {
       width: 100%;
     }
   }
+
+  
+  
+  /* ------ Styling for Topbar and Navigation - Desktop ------ */
 
   .topbar-wrapper {
     height: auto;
@@ -1252,6 +1354,9 @@ html.has-scroll-dragging {
     margin-left: auto;
   }
 
+  
+  
+  /* ------ Styling for Footer - Desktop ------ */
 
   .Footer {
     border-top: 0.5px solid var(--accent-d);
@@ -1333,7 +1438,9 @@ html.has-scroll-dragging {
     justify-self: end;
   }
   
-
+  
+  
+  /* ------ Styling for All Pages - Desktop ------ */
 
   .Page {
     position: relative;
@@ -1343,6 +1450,10 @@ html.has-scroll-dragging {
     box-sizing: border-box;
     padding: 8vh 6vw 14vh;
   }
+
+  
+  
+  /* ------ Styling for Home Page - Desktop ------ */
 
   .Home {
     display: flex;
@@ -1544,6 +1655,9 @@ html.has-scroll-dragging {
   }
  
   
+  
+  /* ------ Styling for Work Page - Desktop ------ */
+
   .Work > div:first-child {
     margin: 0 0 9vh;
   }
@@ -1606,6 +1720,9 @@ html.has-scroll-dragging {
     font-size: var(--fs-five);
   }
 
+  
+  
+  /* ------ Styling for Case Study Page - Desktop ------ */
 
   .Case-study .header {
     margin: 2vh 0 10vh;
@@ -1690,6 +1807,9 @@ html.has-scroll-dragging {
     text-align: center;
   }
 
+  
+  
+  /* ------ Styling for Contact Page - Desktop ------ */
 
   .Contact {
     display: flex;
@@ -1820,6 +1940,9 @@ html.has-scroll-dragging {
     color: var(--secondary);
   }
 
+  
+  
+  /* ------ Styling for Shop Page - Desktop ------ */
 
   .Shop {
     display: flex;
@@ -1837,6 +1960,9 @@ html.has-scroll-dragging {
     font-weight: normal;
   }
 
+  
+  
+  /* ------ Styling for Space Page - Desktop ------ */
 
   .Space > div:first-child {
     margin: 0 0 4vw;
@@ -1908,6 +2034,10 @@ html.has-scroll-dragging {
     text-decoration: none;
   }
 
+  
+  
+  /* ------ Styling for Thoughts Page - Desktop ------ */
+
   section.Thoughts div.thoughtcard {
     padding: 5vh 0;
     border-bottom: 1px solid var(--accent-d);
@@ -1940,6 +2070,10 @@ html.has-scroll-dragging {
     font-size: var(--fs-five);
     line-height: var(--lh-c);
   }
+
+  
+  
+  /* ------ Styling for Lists, Resources, Wishlist and People Pages - Desktop ------ */
 
   section.Lists > ul,
   section.Resources > ul,
@@ -2008,6 +2142,9 @@ html.has-scroll-dragging {
     line-height: var(--lh-b);
   }
 
+  
+  
+  /* ------ Styling for Error Page - Desktop ------ */
 
   .Error {
     display: flex;
@@ -2059,95 +2196,3 @@ html.has-scroll-dragging {
     }
   }
 }
-
-/* nav {
-  display: block;
-  width: 100vh !important;
-  height: 65px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 9999;
-  transform: rotate(90deg);
-  transform-origin: top right;
-}
-nav > div {
-  box-sizing: border-box;
-  margin: 0 auto;
-  height: 100%;
-}
-nav > div ul {
-  width: fit-content;
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(5, auto);
-  padding-left: 0;
-}
-nav > div ul li {
-  width: auto;
-  list-style-type: none;
-  padding: 0.9rem 1rem;
-  text-transform: uppercase;
-  transition: all 0.4s ease-in-out;
-}
-nav > div ul li:hover {
-  transform: scale(1.15);
-}
-nav > div > ul li a {
-  text-decoration: none;
-  color: #5a5a5a;
-  padding: 0.4rem 0;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 0.66rem;
-  line-height: var(--lh-a);
-  letter-spacing: 0.02em;
-}
-.active {
-  color: var(--secondary);
-  border-bottom: 1.5px solid var(--secondary);
-}
-
-.topbar-wrapper {
-  height: 100%;
-  width: 100vw;
-  position: relative;
-  box-sizing: border-box;
-}
-.topbar {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-flow: row;
-  padding: 1rem 2.5% 0.5rem;
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  background-color: transparent;
-}
-.topbar .logo {
-  display: flex;
-  flex-flow: column;
-  height: fit-content;
-}
-.topbar .logo span {
-  display: inline-block;
-  width: 30px;
-  height: 4px;
-  background-color: var(--primary);
-}
-.topbar .logo a {
-  text-decoration: none;
-  color: var(--secondary);
-  padding-top: 0.5rem;
-  width: 91px;
-  text-transform: uppercase;
-  font-family: var(--main-font);
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: var(--lh-a);
-  letter-spacing: 0.025em;
-  text-align: left;
-} */

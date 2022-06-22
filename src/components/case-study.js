@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import LocomotiveScroll from 'locomotive-scroll';
 
 class CaseStudy extends Component {
-   /*  componentDidMount() {
-      // eslint-disable-next-line
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector(".Case-study"),
-            smooth: true
-        })
-    } */
     render() {
         return (
             <section className="Case-study Page">

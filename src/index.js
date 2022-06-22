@@ -18,6 +18,7 @@ export { default as People } from './pages/space-pages/people.js';
 export { default as Resources } from './pages/space-pages/resources.js';
 export { default as Wishlist } from './pages/space-pages/wishlist.js';
 export { default as BlackIvy } from './pages/design-pages/blackivy.js';
+export { default as Article1 } from './pages/writing-pages/article-1.js';
 
 
 ReactDOM.render(
